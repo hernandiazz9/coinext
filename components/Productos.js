@@ -857,7 +857,7 @@ const Productos = ({ data }) => {
 																	<i className="fas fa-cart-plus"></i>
 																</button>
 															</form>
-
+s
 														</div>
 													</div>
 
