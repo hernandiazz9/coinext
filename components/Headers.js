@@ -14,10 +14,10 @@ const Headers = () => {
 				</div>
 				<div className="col-md-6 logo-w3layouts text-center">
 					<h1 className="logo-w3layouts">
-						<a className="navbar-brand">
+						<span className="navbar-brand">
 						<Link  href="/">
 							instrumental</Link>
-							</a>
+							</span>
 					</h1>
 				</div>
 
@@ -105,15 +105,15 @@ const Headers = () => {
 					<ul className="navbar-nav nav-mega mx-auto">
 						<li className="nav-item active">
 							<Link href='/'>
-							<a className="nav-link ml-lg-0" >Home
+							<span className="nav-link ml-lg-0" >Home
 								<span className="sr-only">(current)</span>
-							</a>
+							</span>
 							</Link>
 						</li>
 						
-						<li className="nav-item">
+						<li className="nav-item"> 
 						<Link href='/about'>
-							<a className="nav-link" >About</a>
+							<span className="nav-link" >About</span>
 						</Link>
 						</li>
 						<li className="nav-item dropdown">

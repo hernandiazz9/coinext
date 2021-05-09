@@ -1220,7 +1220,7 @@ const Productos = ({ data }) => {
           <div className="row galsses-grids pt-lg-5 pt-3">
             <div className="col-lg-6 galsses-grid-left">
               <figure className="effect-lexi">
-                <img src="images/banner4.jpg" alt="" className="img-fluid" />
+                <img src="images/banner4.png" alt="" className="img-fluid" />
                 <figcaption>
                   <h3>
                     Editor's
@@ -1232,7 +1232,7 @@ const Productos = ({ data }) => {
             </div>
             <div className="col-lg-6 galsses-grid-left">
               <figure className="effect-lexi">
-                <img src="images/banner1.jpg" alt="" className="img-fluid" />
+                <img src="images/banner1.jpeg" alt="" className="img-fluid" />
                 <figcaption>
                   <h3>
                     Editor's
