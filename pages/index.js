@@ -1,4 +1,4 @@
-import { request } from '../api/datocms'
+import { request } from './api/datocms'
 import { Image, renderMetaTags } from 'react-datocms'
 import Head from 'next/head'
 import Headers from '../components/Headers'
