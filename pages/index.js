@@ -3,7 +3,7 @@ import { Image, renderMetaTags } from 'react-datocms'
 import Head from 'next/head'
 import Headers from '../components/Headers'
 import Banner from '../components/Banner'
-import Productos from '../components/Productos'
+import Productos from '../components/ProductosHome'
 
 const HOMEPAGE_QUERY = `
 query MyQuery {
