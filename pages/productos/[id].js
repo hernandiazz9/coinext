@@ -60,11 +60,11 @@ export async function getStaticProps(context) {
 }
 
 const Producto = ({ data: { allProductos } }) => {
-  const router = useRouter();
-  console.log(router);
-  const {
-    query: { id },
-  } = router;
+  // const router = useRouter();
+  // console.log(router);
+  // const {
+  //   query: { id },
+  // } = router;
   console.log(allProductos);
   return (
     <div>

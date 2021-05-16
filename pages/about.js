@@ -16,6 +16,7 @@ const about = () => {
                     </div>
                 </div>
             </div>
+            <h1>algo mas en about</h1>
         </div>
     )
 }
