@@ -26,7 +26,7 @@ const ProductosHome = ({ data: { allProductos } }) => {
                       />
                       <div className="men-cart-pro">
                         <div className="inner-men-cart-pro">
-                          <Link
+                          {/* <Link
                             href="/productos/[id]"
                             as={`/productos/${producto.slug}`}
                           >
@@ -36,7 +36,7 @@ const ProductosHome = ({ data: { allProductos } }) => {
                             >
                               Mostrar
                             </span>
-                          </Link>
+                          </Link> */}
                         </div>
                       </div>
                       <span className="product-new-top">New</span>
