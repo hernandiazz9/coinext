@@ -43,7 +43,6 @@ export async function getStaticPaths() {
   const res = await request({
     query: SINGLE_PRODUCT_QUERY_PATHS,
   });
-  console.log(res);
   const paths = res.allProductos.map((producto) => ({
     params: { id: producto.slug.toString() },
   }));
@@ -51,10 +50,11 @@ export async function getStaticPaths() {
 }
 //query producto con x paths antes obtenido
 export async function getStaticProps(context) {
+  console.log(context);
   const slug = context.params.id;
   const data = await request({
     query: SINGLE_PRODUCT_QUERY,
-    variables: { slug },
+    variables: { slug }
   });
   return { props: { data } };
 }
@@ -75,34 +75,28 @@ const Producto = ({ data: { allProductos } }) => {
               <div  className="col-lg-5 single-right-left ">
                 <div className="grid  images_3_of_2">
                   <div className="flexslider1">
-                    <ul  className="slides">
-                      <Carousel>
-                        <li>
+                    <div  className="slides">
+                      <Carousel showThumbs={false}>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
                               data={allProductos[0].imagen.responsiveImage}
                             />
                           </div>
-                        </li>
-                        <li>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
                               data={allProductos[0].imagen.responsiveImage}
                             />
                           </div>
-                        </li>
-                        <li>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
                               data={allProductos[0].imagen.responsiveImage}
                             />
                           </div>
-                        </li>
                       </Carousel>
-                    </ul>
+                      </div>
                     <div style={{
                       display:'flex',
                     }}>
@@ -226,11 +220,11 @@ const Producto = ({ data: { allProductos } }) => {
                       <div className="product-googles-info slide-img googles">
                         <div className="men-pro-item">
                           <div className="men-thumb-item">
-                            <img
+                            {/* <img
                               src="images/s5.jpg"
                               className="img-fluid"
                               alt=""
-                            />
+                            /> */}
                             <div className="men-cart-pro">
                               <div className="inner-men-cart-pro">
                                 <a
@@ -336,11 +330,11 @@ const Producto = ({ data: { allProductos } }) => {
                       <div className="product-googles-info slide-img googles">
                         <div className="men-pro-item">
                           <div className="men-thumb-item">
-                            <img
+                            {/* <img
                               src="images/s6.jpg"
                               className="img-fluid"
                               alt=""
-                            />
+                            /> */}
                             <div className="men-cart-pro">
                               <div className="inner-men-cart-pro">
                                 <a
@@ -446,11 +440,11 @@ const Producto = ({ data: { allProductos } }) => {
                       <div className="product-googles-info slide-img googles">
                         <div className="men-pro-item">
                           <div className="men-thumb-item">
-                            <img
+                            {/* <img
                               src="images/s7.jpg"
                               className="img-fluid"
                               alt=""
-                            />
+                            /> */}
                             <div className="men-cart-pro">
                               <div className="inner-men-cart-pro">
                                 <a
@@ -556,11 +550,11 @@ const Producto = ({ data: { allProductos } }) => {
                       <div className="product-googles-info slide-img googles">
                         <div className="men-pro-item">
                           <div className="men-thumb-item">
-                            <img
+                            {/* <img
                               src="images/s8.jpg"
                               className="img-fluid"
                               alt=""
-                            />
+                            /> */}
                             <div className="men-cart-pro">
                               <div className="inner-men-cart-pro">
                                 <a
@@ -666,11 +660,11 @@ const Producto = ({ data: { allProductos } }) => {
                       <div className="product-googles-info slide-img googles">
                         <div className="men-pro-item">
                           <div className="men-thumb-item">
-                            <img
+                            {/* <img
                               src="images/s9.jpg"
                               className="img-fluid"
                               alt=""
-                            />
+                            /> */}
                             <div className="men-cart-pro">
                               <div className="inner-men-cart-pro">
                                 <a
@@ -776,11 +770,11 @@ const Producto = ({ data: { allProductos } }) => {
                       <div className="product-googles-info slide-img googles">
                         <div className="men-pro-item">
                           <div className="men-thumb-item">
-                            <img
+                            {/* <img
                               src="images/s10.jpg"
                               className="img-fluid"
                               alt=""
-                            />
+                            /> */}
                             <div className="men-cart-pro">
                               <div className="inner-men-cart-pro">
                                 <a
