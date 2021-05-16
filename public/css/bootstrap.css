@@ -7692,6 +7692,9 @@ button.bg-dark:focus {
 .px-5 {
   padding-left: 3rem !important;
 }
+.pl-7 {
+  padding-left: 7rem !important;
+}
 
 .m-auto {
   margin: auto !important;
