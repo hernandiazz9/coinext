@@ -3,6 +3,7 @@ import { request } from "../../pages/api/datocms";
 import { Image } from "react-datocms";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { async } from "regenerator-runtime";
 
 const SINGLE_PRODUCT_QUERY = `
 query ($slug: String!) {
@@ -39,24 +40,25 @@ query  {
   }  
 `;
 // query para obtener todos los paths
-export async function getStaticPaths() {
+export const  getStaticPaths = async () => {
   const res = await request({
-    query: SINGLE_PRODUCT_QUERY_PATHS,
+    query: SINGLE_PRODUCT_QUERY_PATHS
   });
-  const paths = res.allProductos.map((producto) => ({
-    params: { id: producto.slug.toString() },
-  }));
+  const paths =  res.allProductos.map((producto) => {
+    return{
+      params: { id: producto.slug.toString() }
+    }
+  });
   return { paths, fallback: false };
 }
 //query producto con x paths antes obtenido
-export async function getStaticProps(context) {
-  console.log(context);
+export const getStaticProps = async (context)=> {
   const slug = context.params.id;
   const data = await request({
     query: SINGLE_PRODUCT_QUERY,
     variables: { slug }
   });
-  return { props: { data } };
+  return { props: { data } }
 }
 
 const Producto = ({ data: { allProductos } }) => {
