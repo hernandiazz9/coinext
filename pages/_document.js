@@ -10,10 +10,10 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-            <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-            <link href="css/login_overlay.css" rel='stylesheet' type='text/css' />
-            <link href="css/style6.css" rel='stylesheet' type='text/css' />
-            <link rel="stylesheet" href="css/shop.css" type="text/css" />
+            {/* <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> */}
+            {/* <link href="css/login_overlay.css" rel='stylesheet' type='text/css' /> */}
+            {/* <link href="css/style6.css" rel='stylesheet' type='text/css' /> */}
+            {/* <link rel="stylesheet" href="css/shop.css" type="text/css" /> */}
             <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all"/>
             <link rel="stylesheet" href="css/owl.theme.css" type="text/css" media="all"/>
             <link href="css/style.css" rel='stylesheet' type='text/css' />

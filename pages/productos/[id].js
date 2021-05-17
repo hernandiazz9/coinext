@@ -4,6 +4,8 @@ import { Image } from "react-datocms";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { async } from "regenerator-runtime";
+import Head from 'next/head'
+// import Head from '../../public/css/bootstrap.css'
 
 const SINGLE_PRODUCT_QUERY = `
 query ($slug: String!) {
@@ -70,6 +72,19 @@ const Producto = ({ data: { allProductos } }) => {
   console.log(allProductos);
   return (
     <div>
+      {/* <Head>
+            <link href="../../public/css/bootstrap.css" rel='stylesheet' type='text/css' />
+            <link href="../../public/css/login_overlay.css" rel='stylesheet' type='text/css' />
+            <link href="../../public/css/style6.css" rel='stylesheet' type='text/css' />
+            <link rel="stylesheet" href="../../public/css/shop.css" type="text/css" />
+            <link rel="stylesheet" href="../../public/css/owl.carousel.css" type="text/css" media="all"/>
+            <link rel="stylesheet" href="../../public/css/owl.theme.css" type="text/css" media="all"/>
+            <link href="../../public/css/style.css" rel='stylesheet' type='text/css' />
+            <link href="../../public/css/fontawesome-all.css" rel="stylesheet"/>
+            <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"/>
+            <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet"/>
+            <link href="../../public/css/simplyCountdown.css" rel='stylesheet' type='text/css' />
+        </Head> */}
       <section className="banner-bottom-wthreelayouts  py-lg-5 py-3">
         <div className="container">
           <div className="inner-sec-shop pt-lg-4 pt-3 ">

@@ -967,8 +967,8 @@ span.item_price {
 	font-size: 15px;
 }
 
-.product-sec1.product-sec2 {
-	background: url(../images/bg1.jpg)no-repeat 0px 0px;
+/* .product-sec1.product-sec2 {
+	background: url(../public/images/bg1.jpg)no-repeat 0px 0px;
 	background-attachment: fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -976,7 +976,7 @@ span.item_price {
 	-moz-background-size: cover;
 	-ms-background-size: cover;
 	position: relative;
-}
+} */
 
 .effect-bg {
 	margin-top: 40px;
