@@ -143,10 +143,12 @@ const Headers = () => {
 							</ul>
 						</li>
 						<li className="nav-item dropdown">
-							<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+							<Link href='/productos'>
+							<span className="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
-								Shop
-							</a>
+								Productos
+							</span>
+							</Link>
 							<ul className="dropdown-menu mega-menu ">
 								<li>
 									<div className="row">

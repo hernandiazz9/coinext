@@ -3,7 +3,7 @@ import { Image, renderMetaTags } from 'react-datocms'
 import Head from 'next/head'
 import Headers from '../components/Headers'
 import Banner from '../components/Banner'
-import Productos from '../components/ProductosHome'
+import ProductosHome from '../components/ProductosHome'
 
 const HOMEPAGE_QUERY = `
 query MyQuery {
@@ -31,7 +31,7 @@ query MyQuery {
 export async function getStaticProps() {
   const data = await request({
     query: HOMEPAGE_QUERY,
-    variables: { limit: 10 },
+    
   })
 
   return {
@@ -47,7 +47,7 @@ export default function Home({ data }) {
     <div>
     
       <Banner/>
-      <Productos data={data}/>
+      <ProductosHome data={data}/>
       algo
       {/* <Head>{renderMetaTags(data.blog.seo.concat(data.site.favicon))}</Head> */}
       {/* {data.allProductos.map((producto) => (

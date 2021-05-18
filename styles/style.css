@@ -122,6 +122,9 @@ h1.logo-w3layouts a.navbar-brand {
 .top-header {
     background: none !important;
 }
+.nav-link{
+    cursor: pointer;
+}
 
 .navbar-light .navbar-nav .nav-link,
 .dropdown-item {
