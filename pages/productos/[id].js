@@ -69,7 +69,7 @@ const Producto = ({ data: { allProductos } }) => {
   // const {
   //   query: { id },
   // } = router;
-  // console.log(allProductos);
+console.log(allProductos);
   return (
     <div>
       
