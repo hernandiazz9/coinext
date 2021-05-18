@@ -124,7 +124,7 @@ const Headers = () => {
 											<h5 className="tittle-w3layouts-sub"> Tittle goes here </h5>
 											<div className="media-mini mt-3">
 												<a href="shop.html">
-													<img src="images/g2.jpg" className="img-fluid" alt=""/>
+													{/* <img src="images/g2.jpg" className="img-fluid" alt=""/> */}
 												</a>
 											</div>
 										</div>
@@ -132,7 +132,7 @@ const Headers = () => {
 											<h5 className="tittle-w3layouts-sub">Tittle goes here </h5>
 											<div className="media-mini mt-3">
 												<a href="shop.html">
-													<img src="images/g3.jpg" className="img-fluid" alt=""/>
+													{/* <img src="images/g3.jpg" className="img-fluid" alt=""/> */}
 												</a>
 											</div>
 
@@ -224,7 +224,7 @@ const Headers = () => {
 											<h5 className="tittle-w3layouts-sub-nav">Tittle goes here </h5>
 											<div className="media-mini mt-3">
 												<a href="shop.html">
-													<img src="images/g1.jpg" className="img-fluid" alt=""/>
+													{/* <img src="images/g1.jpg" className="img-fluid" alt=""/> */}
 												</a>
 											</div>
 
