@@ -46,7 +46,7 @@ export const  getStaticPaths = async () => {
   const res = await request({
     query: SINGLE_PRODUCT_QUERY_PATHS
   });
-  const paths =  res.allProductos.map((producto) => {
+  const paths = await res.allProductos.map((producto) => {
     return{
       params: { id: producto.slug.toString() }
     }
@@ -69,7 +69,7 @@ const Producto = ({ data: { allProductos } }) => {
   // const {
   //   query: { id },
   // } = router;
-  console.log(allProductos);
+  // console.log(allProductos);
   return (
     <div>
       
@@ -85,19 +85,19 @@ const Producto = ({ data: { allProductos } }) => {
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
-                              data={allProductos[0].imagen.responsiveImage}
+                              data={allProductos&&allProductos[0].imagen.responsiveImage}
                             />
                           </div>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
-                              data={allProductos[0].imagen.responsiveImage}
+                              data={allProductos&&allProductos[0].imagen.responsiveImage}
                             />
                           </div>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
-                              data={allProductos[0].imagen.responsiveImage}
+                              data={allProductos&&allProductos[0].imagen.responsiveImage}
                             />
                           </div>
                       </Carousel>
@@ -107,7 +107,7 @@ const Producto = ({ data: { allProductos } }) => {
                     }}>
                       <Image
                         lazyLoad={true}
-                        data={allProductos[0].imagen.responsiveImage}
+                        data={allProductos&&allProductos[0].imagen.responsiveImage}
                         style={{ 
                           width: "25" + "%",
                           margin:'3px'
@@ -115,7 +115,7 @@ const Producto = ({ data: { allProductos } }) => {
                       />
                       <Image
                         lazyLoad={true}
-                        data={allProductos[0].imagen.responsiveImage}
+                        data={allProductos&&allProductos[0].imagen.responsiveImage}
                         style={{ 
                           width: "25" + "%", 
                           margin:'3px'
@@ -130,7 +130,7 @@ const Producto = ({ data: { allProductos } }) => {
                 </div>
               </div>
               <div  className="pt-5 pl-7 col-lg-6 single-right-left simpleCart_shelfItem">
-                <h3>{allProductos[0].titulo}</h3>
+                <h3>{allProductos&&allProductos[0].titulo}</h3>
                 <p>
                   <span className="item_price">$650</span>
                   <del>$1,199</del>
@@ -166,11 +166,11 @@ const Producto = ({ data: { allProductos } }) => {
                 </div>
                 <div className="description">
                   <h3>Breve Descripción</h3>
-                  <h5>{allProductos[0].breveDescripcion} </h5>
+                  <h5>{allProductos&&allProductos[0].breveDescripcion} </h5>
                 </div>
                 <div className="description">
                   <h3>Categorias</h3>
-                  {allProductos[0].categorias.map((categoria) => (
+                  {allProductos&&allProductos[0].categorias.map((categoria) => (
                     //poner link y linkear a categorias
                     <span key={categoria.id}>
                       <p>{categoria.categoria}</p>
