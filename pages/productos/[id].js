@@ -69,7 +69,10 @@ const Producto = ({ data: { allProductos } }) => {
   // const {
   //   query: { id },
   // } = router;
-console.log(allProductos);
+  
+  const {imagen, breveDescripcion, titulo, categorias  } = allProductos[0]
+  
+
   return (
     <div>
       
@@ -85,19 +88,19 @@ console.log(allProductos);
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
-                              data={allProductos&&allProductos[0].imagen.responsiveImage}
+                              data={imagen.responsiveImage}
                             />
                           </div>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
-                              data={allProductos&&allProductos[0].imagen.responsiveImage}
+                              data={imagen.responsiveImage}
                             />
                           </div>
                           <div className="thumb-image">
                             <Image
                               lazyLoad={true}
-                              data={allProductos&&allProductos[0].imagen.responsiveImage}
+                              data={imagen.responsiveImage}
                             />
                           </div>
                       </Carousel>
@@ -107,7 +110,7 @@ console.log(allProductos);
                     }}>
                       <Image
                         lazyLoad={true}
-                        data={allProductos&&allProductos[0].imagen.responsiveImage}
+                        data={imagen.responsiveImage}
                         style={{ 
                           width: "25" + "%",
                           margin:'3px'
@@ -115,7 +118,7 @@ console.log(allProductos);
                       />
                       <Image
                         lazyLoad={true}
-                        data={allProductos&&allProductos[0].imagen.responsiveImage}
+                        data={imagen.responsiveImage}
                         style={{ 
                           width: "25" + "%", 
                           margin:'3px'
@@ -130,7 +133,7 @@ console.log(allProductos);
                 </div>
               </div>
               <div  className="pt-5 pl-7 col-lg-6 single-right-left simpleCart_shelfItem">
-                <h3>{allProductos&&allProductos[0].titulo}</h3>
+                <h3>{titulo}</h3>
                 <p>
                   <span className="item_price">$650</span>
                   <del>$1,199</del>
@@ -166,11 +169,11 @@ console.log(allProductos);
                 </div>
                 <div className="description">
                   <h3>Breve Descripción</h3>
-                  <h5>{allProductos&&allProductos[0].breveDescripcion} </h5>
+                  <h5>{breveDescripcion} </h5>
                 </div>
                 <div className="description">
                   <h3>Categorias</h3>
-                  {allProductos&&allProductos[0].categorias.map((categoria) => (
+                  {categorias.map((categoria) => (
                     //poner link y linkear a categorias
                     <span key={categoria.id}>
                       <p>{categoria.categoria}</p>
