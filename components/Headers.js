@@ -1,6 +1,9 @@
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 const Headers = () => {
+	const router = useRouter()
+	console.log(router.pathname, 'router');
     return (
         <header>
 			<div className="row">
@@ -76,168 +79,31 @@ const Headers = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav nav-mega mx-auto">
-						<li className="nav-item active">
-							<Link href='/'>
-							<span className="nav-link ml-lg-0" >Home
-								<span className="sr-only">(current)</span>
+						<li className="nav-item ">
+							<Link href='/' >
+							<span className={router.pathname==='/'?'nav-link  active':'nav-link '}>
+								Home
 							</span>
 							</Link>
 						</li>
 						
 						<li className="nav-item"> 
 						<Link href='/about'>
-							<span className="nav-link" >About</span>
+							<span className={router.pathname==='/about'?'nav-link  active':'nav-link '} >About</span>
 						</Link>
 						</li>
-						<li className="nav-item dropdown">
-							<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-							    aria-expanded="false">
-								Features
-							</a>
-							<ul className="dropdown-menu mega-menu ">
-								<li>
-									<div className="row">
-										<div className="col-md-4 media-list span4 text-left">
-											<h5 className="tittle-w3layouts-sub"> Tittle goes here </h5>
-											<ul>
-												<li className="media-mini mt-3">
-													<a href="shop.html">Designer Glasses</a>
-												</li>
-												<li className="">
-													<a href="shop.html"> Ray-Ban</a>
-												</li>
-												<li>
-													<a href="shop.html">Prescription Glasses</a>
-												</li>
-												<li className="mt-3">
-													<h5>View more pages</h5>
-												</li>
-												<li className="mt-2">
-													<a href="about.html">About</a>
-												</li>
-												<li>
-													<a href="customer.html">Customers</a>
-												</li>
-											</ul>
-										</div>
-										<div className="col-md-4 media-list span4 text-left">
-											<h5 className="tittle-w3layouts-sub"> Tittle goes here </h5>
-											<div className="media-mini mt-3">
-												<a href="shop.html">
-													{/* <img src="images/g2.jpg" className="img-fluid" alt=""/> */}
-												</a>
-											</div>
-										</div>
-										<div className="col-md-4 media-list span4 text-left">
-											<h5 className="tittle-w3layouts-sub">Tittle goes here </h5>
-											<div className="media-mini mt-3">
-												<a href="shop.html">
-													{/* <img src="images/g3.jpg" className="img-fluid" alt=""/> */}
-												</a>
-											</div>
-
-										</div>
-									</div>
-									<hr/>
-								</li>
-							</ul>
-						</li>
+						
 						<li className="nav-item dropdown">
 							<Link href='/productos'>
-							<span className="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
-							    aria-expanded="false">
+							<span className={router.pathname==='/productos'?'nav-link  active':'nav-link '}>
 								Productos
 							</span>
 							</Link>
-							<ul className="dropdown-menu mega-menu ">
-								<li>
-									<div className="row">
-										<div className="col-md-4 media-list span4 text-left">
-											<h5 className="tittle-w3layouts-sub"> Tittle goes here </h5>
-											<ul>
-												<li className="media-mini mt-3">
-													<a href="shop.html">Designer Glasses</a>
-												</li>
-												<li className="">
-													<a href="shop.html"> Ray-Ban</a>
-												</li>
-												<li>
-													<a href="shop.html">Prescription Glasses</a>
-												</li>
-												<li>
-													<a href="shop.html">Rx Sunglasses</a>
-												</li>
-												<li>
-													<a href="shop.html">Contact Lenses</a>
-												</li>
-												<li>
-													<a href="shop.html">Multifocal Glasses</a>
-												</li>
-												<li>
-													<a href="shop.html">Kids Glasses</a>
-												</li>
-												<li>
-													<a href="shop.html">Lightweight Glasses</a>
-												</li>
-												<li>
-													<a href="shop.html">Sports Glasses</a>
-												</li>
-											</ul>
-										</div>
-										<div className="col-md-4 media-list span4 text-left">
-											<h5 className="tittle-w3layouts-sub"> Tittle goes here </h5>
-											<ul>
-												<li className="media-mini mt-3">
-
-													<a href="shop.html">Brooks Brothers</a>
-												</li>
-												<li>
-													<a href="shop.html">Persol</a>
-												</li>
-												<li>
-													<a href="shop.html">Polo Ralph Lauren</a>
-												</li>
-												<li>
-													<a href="shop.html">Prada</a>
-												</li>
-												<li>
-													<a href="shop.html">Ray-Ban Jr</a>
-												</li>
-												<li>
-													<a href="shop.html">Sferoflex</a>
-												</li>
-											</ul>
-											<ul className="sub-in text-left">
-
-												<li>
-													<a href="shop.html">Polo Ralph Lauren</a>
-												</li>
-												<li>
-													<a href="shop.html">Prada</a>
-												</li>
-												<li>
-													<a href="shop.html">Ray-Ban Jr</a>
-												</li>
-											</ul>
-
-										</div>
-										<div className="col-md-4 media-list span4 text-left">
-
-											<h5 className="tittle-w3layouts-sub-nav">Tittle goes here </h5>
-											<div className="media-mini mt-3">
-												<a href="shop.html">
-													{/* <img src="images/g1.jpg" className="img-fluid" alt=""/> */}
-												</a>
-											</div>
-
-										</div>
-									</div>
-									<hr/>
-								</li>
-							</ul>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="contact.html">Contact</a>
+							<Link href='/contacto'>
+							<span className={router.pathname==='/contacto'?'nav-link  active':'nav-link '}>Contacto</span>
+							</Link>
 						</li>
 					</ul>
 

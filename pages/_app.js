@@ -5,6 +5,7 @@ import '../styles/style6.css'
 import '../styles/shop.css'
 import '../styles/style.css'
 import '../styles/fontawesome-all.css'
+import '../styles/contact.css'
 
 
 function MyApp({ Component, pageProps }) {

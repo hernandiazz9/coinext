@@ -45,17 +45,18 @@ export async function getStaticProps() {
 const index = ({ data: { allProductos } }) => {
   return (
     <>
-      <div className="row">
-        {/* <!-- product left --> */}
-        <div className="side-bar col-lg-3">
+      <div className="container ">
+      <div className="row ">
+        <div className="sticky-category col-lg-2"> {/*hacer sticky la columna la puta */}
+        <div className="side-bar " >        
           <div className="search-hotel">
-            <h3 className="agileits-sear-head">Search Here..</h3>
+            <h3 className="agileits-sear-head">Busca tu Producto</h3>
             <form>
               <input
                 className="form-control"
                 type="search"
                 name="search"
-                placeholder="Search here..."
+                placeholder="Buscar..."
                 required=""
               />
               <button className="btn1">
@@ -66,39 +67,8 @@ const index = ({ data: { allProductos } }) => {
           </div>
           {/* <!-- price range --> */}
           <div className="range">
-            <h3 className="agileits-sear-head">Price range</h3>
-            <ul className="dropdown-menu6">
-              <li>
-                <div id="slider-range"></div>
-                <input
-                  type="text"
-                  id="amount"
-                  style={{
-                    border: "0",
-                    color: " #ffffff",
-                    fontWeight: "normal",
-                  }}
-                />
-              </li>
-            </ul>
-          </div>
-          {/* <!-- //price range -->
-							<!--preference --> */}
-          <div className="left-side">
-            <h3 className="agileits-sear-head">Deal Offer On</h3>
-            <ul>
-              <li>
-                <input type="checkbox" className="checked" />
-                <span className="span">Backpack</span>
-              </li>
-              <li>
-                <input type="checkbox" className="checked" />
-                <span className="span">Phone Pocket</span>
-              </li>
-            </ul>
-          </div>
-          {/* <!-- // preference --> */}
-          {/* <!-- discounts --> */}
+            <h3 className="agileits-sear-head">Categorías</h3>
+            </div>
           <div className="left-side">
             <h3 className="agileits-sear-head">Discount</h3>
             <ul>
@@ -128,113 +98,9 @@ const index = ({ data: { allProductos } }) => {
               </li>
             </ul>
           </div>
-          {/* <!-- //discounts -->
-							<!-- reviews --> */}
-          <div className="customer-rev left-side">
-            <h3 className="agileits-sear-head">Customer Review</h3>
-            <ul>
-              <li>
-                <a href="#">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <span>5.0</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                  <span>4.0</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                  <span>3.5</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                  <span>3.0</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                  <i className="fa fa-star-o" aria-hidden="true"></i>
-                  <span>2.5</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* <!-- //reviews -->
-							<!-- deals --> */}
-          <div className="deal-leftmk left-side">
-            <h3 className="agileits-sear-head">Special Deals</h3>
-            <div className="special-sec1">
-              <div className="img-deals">
-                <img src="images/s1.jpg" alt="" />
-              </div>
-              <div className="img-deal1">
-                <h3>Farenheit (Grey)</h3>
-                <a href="single.html">$575.00</a>
-              </div>
-              <div className="clearfix"></div>
-            </div>
-            <div className="special-sec1">
-              <div className="col-xs-4 img-deals">
-                <img src="images/s2.jpg" alt="" />
-              </div>
-              <div className="col-xs-8 img-deal1">
-                <h3>Opium (Grey)</h3>
-                <a href="single.html">$325.00</a>
-              </div>
-              <div className="clearfix"></div>
-            </div>
-            <div className="special-sec1">
-              <div className="col-xs-4 img-deals">
-                <img src="images/m2.jpg" alt="" />
-              </div>
-              <div className="col-xs-8 img-deal1">
-                <h3>Azmani Round</h3>
-                <a href="single.html">$725.00</a>
-              </div>
-              <div className="clearfix"></div>
-            </div>
-            <div className="special-sec1">
-              <div className="col-xs-4 img-deals">
-                <img src="images/m4.jpg" alt="" />
-              </div>
-              <div className="col-xs-8 img-deal1">
-                <h3>Farenheit Oval</h3>
-                <a href="single.html">$325.00</a>
-              </div>
-              <div className="clearfix"></div>
-            </div>
-          </div>
-          {/* <!-- //deals --> */}
         </div>
-        {/* <!-- //product left --> */}
-        {/* <!--/product right--> */}
-        <div className="left-ads-display col-lg-9">
+        </div>
+        <div className="left-ads-display col-lg-10">
           <div className="wrapper_top_shop">
             <div className="row">
               {/* <!-- /womens --> */}
@@ -343,6 +209,7 @@ const index = ({ data: { allProductos } }) => {
           </div>
           {/* <!--//product right--> */}
         </div>
+      </div>
       </div>
     </>
   );
