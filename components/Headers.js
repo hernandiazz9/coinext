@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import {useRouter} from 'next/router'
+import {useState} from 'react'
+
 
 const Headers = () => {
+	const [open, setOpen] = useState(false)
 	const router = useRouter()
 	console.log(router.pathname, 'router');
+	
     return (
         <header>
 			<div className="row">
@@ -42,9 +46,6 @@ const Headers = () => {
 							</form>
 						</li>
 					</ul>
-
-					
-
 				</div>
 			</div>
 			<div className="search">
@@ -53,7 +54,6 @@ const Headers = () => {
 						<i className="fas fa-search"></i>
 					</button>
 				</div>
-
 				<div className="overlay overlay-door">
 					<button type="button" className="overlay-close">
 						<i className="fa fa-times" aria-hidden="true"></i>
@@ -64,20 +64,19 @@ const Headers = () => {
 							<i className="fas fa-search"></i>
 						</button>
 					</form>
-
 				</div>
-
 			</div>
 			<label className="top-log mx-auto"></label>
-			<nav className="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
-
-				<button className="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-				    aria-expanded="false" aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon">
-						
-					</span>
+			<nav className="navbar  navbar-expand-lg navbar-light bg-light top-header mb-2">
+			
+				<button 
+					onClick={()=>setOpen(open=>!open)}
+					className="navbar-toggler" type="button" data-toggle="collapse" 
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+					aria-expanded="true" aria-label="Toggle navigation"
+				><span className="navbar-toggler-icon"></span>
 				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+				<div className={`${open?'':'collapse'} sticky-category navbar-collapse`} id="navbarSupportedContent">
 					<ul className="navbar-nav nav-mega mx-auto">
 						<li className="nav-item ">
 							<Link href='/' >
