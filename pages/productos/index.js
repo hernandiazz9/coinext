@@ -6,29 +6,34 @@ import GoToTop from '../../components/GoToTop'
 
 const PRODUCT_QUERY = `
 query {
-    allProductos {
-      titulo
-      queEs
+  allProductos {
+    titulo
+    queEs
+    id
+    categorias {
+      categoria
       id
-      categorias {
-        categoria
-        id
-      }
-      slug
-      breveDescripcion
-      imagen {
-        responsiveImage {
-          src
-          srcSet
-          width
-          height
-          aspectRatio
-          sizes
-          webpSrcSet
-        }
+    }
+    slug
+    breveDescripcion
+    imagen {
+      responsiveImage {
+        src
+        srcSet
+        width
+        height
+        aspectRatio
+        sizes
+        webpSrcSet
       }
     }
   }
+  allCategoriaxes {
+    id
+    categoria
+  } 
+}
+
 `;
 
 export async function getStaticProps() {
@@ -39,7 +44,8 @@ export async function getStaticProps() {
   return { props: { data } };
 }
 
-const index = ({ data: { allProductos } }) => {
+const index = ({ data: { allProductos, allCategoriaxes } }) => {
+  console.log(allProductos);
   //componente
 
   const [productosTodos, setproductosTodos] = useState([]);
@@ -53,6 +59,25 @@ const index = ({ data: { allProductos } }) => {
     setHastaDonde((hastaDonde) => hastaDonde + 9);
     setproductosTodos(allProductos.slice(0, num));
   };
+  const click = (categoria) =>{
+    
+    const filtrados = allProductos.map( producto => {
+      // console.log('producto',producto);
+      const prods = producto.categorias.filter(cate=> cate.categoria===categoria)
+      return( prods )
+    })
+    console.log(filtrados);
+    
+    // console.log('categoria pedida:',categoria)
+    // const filtrados = allProductos.filter( producto => {
+    //   // console.log('producto',producto);
+    //   const prods = producto.categorias.map(cate=>{
+    //     console.log(cate);
+    //   })
+    //   console.log(producto.categorias)
+    // })
+    
+  }
   return (
     <div className="container ">
       <div className="row ">
@@ -81,30 +106,13 @@ const index = ({ data: { allProductos } }) => {
             <div className="left-side">
               <h3 className="agileits-sear-head">Humano</h3>
               <ul>
-                <li>
-                  <input type="checkbox" className="checked" />
-                  <span className="span">cadera</span>
+                {allCategoriaxes.map((categoria)=>(
+                  <li key={categoria.id}>
+                    <input type="checkbox" onClick={()=>click(categoria.categoria)} className="checked" />
+                <span className="span">{categoria.categoria}</span>
                 </li>
-                <li>
-                  <input type="checkbox" className="checked" />
-                  <span className="span">espalda</span>
-                </li>
-                <li>
-                  <input type="checkbox" className="checked" />
-                  <span className="span">tus nalgas</span>
-                </li>
-                <li>
-                  <input type="checkbox" className="checked" />
-                  <span className="span">cabeza</span>
-                </li>
-                <li>
-                  <input type="checkbox" className="checked" />
-                  <span className="span">rodilla</span>
-                </li>
-                <li>
-                  <input type="checkbox" className="checked" />
-                  <span className="span">craneo</span>
-                </li>
+                ))}
+                
               </ul>
             </div>
           </div>
