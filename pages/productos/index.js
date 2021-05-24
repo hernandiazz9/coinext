@@ -45,7 +45,7 @@ export async function getStaticProps() {
 }
 
 const index = ({ data: { allProductos, allCategoriaxes } }) => {
-  console.log(allProductos);
+  // console.log(allProductos);
   //componente
 
   const [productosTodos, setproductosTodos] = useState([]);
@@ -61,12 +61,18 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
   };
   const click = (categoria) =>{
     
-    const filtrados = allProductos.map( producto => {
-      // console.log('producto',producto);
-      const prods = producto.categorias.filter(cate=> cate.categoria===categoria)
-      return( prods )
-    })
-    console.log(filtrados);
+  //   const filtrados = allProductos.filter( producto => {
+  //     console.log(producto.categorias.map(categoria=>categoria.categoria).includes(categoria));
+       
+  //     // const prods = producto.categorias.map(cate=> cate.categoria)
+
+  //     // console.log(producto.categorias);  
+
+  //     // console.log(filtrados);
+  // })
+
+    
+
     
     // console.log('categoria pedida:',categoria)
     // const filtrados = allProductos.filter( producto => {
