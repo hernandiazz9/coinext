@@ -1,10 +1,10 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { request } from "../../pages/api/datocms";
 import { Image } from "react-datocms";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { async } from "regenerator-runtime";
-import Head from "next/head";
+// import { async } from "regenerator-runtime";
+// import Head from "next/head";
 // import Head from '../../public/css/bootstrap.css'
 
 const SINGLE_PRODUCT_QUERY = `
@@ -139,8 +139,7 @@ const Producto = ({ data }) => {
               <div className="sticky-category">
                 <h3>{titulo&&titulo}</h3>
                 <p>
-                  {/* <span className="item_price">$650</span>
-                <del>$1,199</del> */}
+                  algo
                 </p>
                 <div className="rating1">
                   <ul className="stars">
