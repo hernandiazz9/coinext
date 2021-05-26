@@ -48,51 +48,54 @@ export const getStaticPaths = async () => {
     query: SINGLE_PRODUCT_QUERY_PATHS,
   });
   const paths = await res.allProductos.map((producto) => {
+    // console.log(producto.slug);
     return {
       params: { id: producto.slug },
     };
   });
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 //query producto con x paths antes obtenido
 export const getStaticProps = async (context) => {
-  // console.log(context, "viendo que tiene el context");
-  const slug = context.params.id;
+  // console.log(error, "viendo que tiene el error");
+  const slug = await context.params.id;
   const data = await request({
     query: SINGLE_PRODUCT_QUERY,
     variables: { slug },
   });
   return { props: { data } };
 };
+const Producto = ({ data }) => {
 
-const Producto = ({ data: { allProductos } }) => {
-  const { imagen, breveDescripcion, titulo, categorias } = allProductos[0];
+  if(!data)return null
+  const {allProductos} = data;
+   const { imagen, breveDescripcion, titulo, categorias } = allProductos[0];
 
   const renderCustomThumbs = () => {
     return [
       <picture key="01">
-        <source data-srcset={imagen.responsiveImage.src} type="image/jpg" />
+        <source data-srcset={imagen&&imagen.responsiveImage.src} type="image/jpg" />
         <img
           key="01"
-          src={imagen.responsiveImage.src}
+          src={imagen&&imagen.responsiveImage.src}
           alt="First Thumbnail"
           height="70"
         />
       </picture>,
       <picture key="02">
-        <source data-srcset={imagen.responsiveImage.src} type="image/jpg" />
+        <source data-srcset={imagen&&imagen.responsiveImage.src} type="image/jpg" />
         <img
           key="02"
-          src={imagen.responsiveImage.src}
+          src={imagen&&imagen.responsiveImage.src}
           alt="Second Thumbnail"
           height="70"
         />
       </picture>,
       <picture key="03">
-        <source data-srcset={imagen.responsiveImage.src} type="image/jpg" />
+        <source data-srcset={imagen&&imagen.responsiveImage.src} type="image/jpg" />
         <img
           key="03"
-          src={imagen.responsiveImage.src}
+          src={imagen&&imagen.responsiveImage.src}
           alt="Third Thumbnail"
           height="70"
         />
@@ -134,7 +137,7 @@ const Producto = ({ data: { allProductos } }) => {
             </div>
             <div className="pt-5 pl-7  col-lg-6 single-right-left simpleCart_shelfItem">
               <div className="sticky-category">
-                <h3>{titulo}</h3>
+                <h3>{titulo&&titulo}</h3>
                 <p>
                   {/* <span className="item_price">$650</span>
                 <del>$1,199</del> */}
@@ -170,11 +173,11 @@ const Producto = ({ data: { allProductos } }) => {
                 </div>
                 <div className="description">
                   <h3>Breve Descripción</h3>
-                  <h5>{breveDescripcion} </h5>
+                  <h5>{breveDescripcion&&breveDescripcion} </h5>
                 </div>
                 <div className="description">
                   <h3>Categorias</h3>
-                  {categorias.map((categoria) => (
+                  {categorias&&categorias.map((categoria) => (
                     //poner link y linkear a categorias
                     <span key={categoria.id}>
                       <p>{categoria.categoria}</p>
