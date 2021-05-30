@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Image } from "react-datocms";
 import GoToTop from "../../components/GoToTop";
 import MiniProduct from '../../components/MiniProduct'
+import { useRouter } from "next/router";
 
 export async function getStaticProps() {
   const data = await request({
@@ -46,6 +47,17 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
     }
     
   };
+  const router = useRouter()
+  const buscar = (e) =>{
+
+    console.log(router.query.search, '1');
+
+    
+      
+      console.log(router.query.search);
+      click(router.query.search)
+    
+  }
 
   return (
     <div className="container ">
@@ -62,7 +74,7 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
                   placeholder="Buscar..."
                   required=""
                 />
-                <button className="btn1">
+                <button type='button' onClick={()=>buscar()} className="btn1">
                   <i className="fas fa-search"></i>
                 </button>
                 <div className="clearfix"> </div>
@@ -117,7 +129,7 @@ query {
     slug
     breveDescripcion
     imagen {
-      responsiveImage (imgixParams: { fit: crop, w: 300, h: 450, auto: format })  {
+      responsiveImage (imgixParams: { fit: crop, w: 300, h: 450 })  {
         src
         srcSet
         width

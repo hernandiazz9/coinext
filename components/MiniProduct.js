@@ -7,10 +7,10 @@ const ProductHome = ({ productos, desde }) => {
   return (
     <div className={desde?"contenedor-cards-productos":'contenedor-cards-home'}>
       {productos.map((producto) => (
-        <Link href={`productos/${producto.slug}`}>
-          <div key={producto.id}  className="card">
+        <Link key={producto.id} href={`productos/${producto.slug}`}>
+          <div   className="card">
             <div className="imagen-card">
-              {/* <Image lazyLoad={true} data={producto.imagen.responsiveImage} /> */}
+              <Image lazyLoad={true} data={producto.imagen.responsiveImage} />
             </div>
             <div className="contenido">
               <h3 className="titulo">{producto.titulo}</h3>
@@ -35,7 +35,7 @@ const ProductHome = ({ productos, desde }) => {
             max-width: 900px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             grid-gap: 2rem;
 
           }
@@ -78,7 +78,7 @@ const ProductHome = ({ productos, desde }) => {
             transition: ease-out 300ms;
           }
           .contenido h3{
-            font-size:1rem;
+            font-size:1.2rem;
           }
           .card:hover .contenido h3 {
             font-weight: bold;
@@ -86,6 +86,7 @@ const ProductHome = ({ productos, desde }) => {
           }
           .card:hover .contenido {
             padding: 0rem 1rem;
+            margin-bottom: 1rem;
           }
         `}
       </style>

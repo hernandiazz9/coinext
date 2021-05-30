@@ -9,7 +9,7 @@ const ProductosHome = ({ data: { allProductos } }) => {
       <div className="container-fluid ">
         <div className=" container mx-auto inner-sec-shop px-lg-4 px-3">
           <h3 className="tittle-w3layouts text-center pb-4 my-lg-4 my-4">
-            Algunos de Nuestros Productos{" "}
+            Nuestros Productos{" "}
           </h3>
           
 
@@ -18,7 +18,7 @@ const ProductosHome = ({ data: { allProductos } }) => {
           <div className="row galsses-grids pt-lg-5 pt-3">
             <div className="col-lg-6 galsses-grid-left">
               <figure className="effect-lexi">
-                {/* <img src="images/banner4.png" alt="" className="img-fluid" /> */}
+                <img src="images/banner4.png" alt="" className="img-fluid" />
                 <figcaption>
                   <h3>
                     Editor's

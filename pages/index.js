@@ -41,7 +41,7 @@ query MyQuery {
     titulo
     breveDescripcion
     imagen {
-      responsiveImage (imgixParams: { fit: crop, w: 350, h: 450, auto: format }) {
+      responsiveImage (imgixParams: { fit: crop, w: 350, h: 450 }) {
         src
         srcSet
         width

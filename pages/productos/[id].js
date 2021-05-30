@@ -53,7 +53,7 @@ export const getStaticPaths = async () => {
       params: { id: producto.slug },
     };
   });
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 //query producto con x paths antes obtenido
 export const getStaticProps = async (context) => {
@@ -119,13 +119,13 @@ const Producto = ({ data }) => {
                       <div className="thumb-image">
                         {/* <img src={imagen.responsiveImage.src} alt="a" /> */}
 
-                        {/* <Image lazyLoad={true} data={imagen.responsiveImage} /> */}
+                        <Image lazyLoad={true} data={imagen.responsiveImage} />
                       </div>
                       <div className="thumb-image">
-                        {/* <Image lazyLoad={true} data={imagen.responsiveImage} /> */}
+                        <Image lazyLoad={true} data={imagen.responsiveImage} />
                       </div>
                       <div className="thumb-image">
-                        {/* <Image lazyLoad={true} data={imagen.responsiveImage} /> */}
+                        <Image lazyLoad={true} data={imagen.responsiveImage} />
                       </div>
                     </Carousel>
                   </div>

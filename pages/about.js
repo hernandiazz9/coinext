@@ -6,7 +6,7 @@ const about = () => {
           <div class="about-content py-lg-5 py-3">
             <div class="row">
               <div class="col-lg-6 p-0">
-                {/* <img src="images/sher.jpeg" alt="Goggles" class="img-fluid" /> */}
+                <img src="images/sher.jpeg" alt="Goggles" class="img-fluid" />
               </div>
               <div class="col-lg-6 about-info">
                 <h3 class="tittle-w3layouts text-left mb-lg-5 mb-3">
