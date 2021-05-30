@@ -1,131 +1,24 @@
 import Link from "next/link";
 import { Image } from "react-datocms";
+import MiniProduct from './MiniProduct'
 
 const ProductosHome = ({ data: { allProductos } }) => {
-  const seisProd = allProductos.slice(0, 8);
+  const seisProd = allProductos.slice(0, 6);
   return (
-    <section className="banner-bottom-wthreelayouts py-lg-5 py-3">
-      <div className="container-fluid">
-        <div className="inner-sec-shop px-lg-4 px-3">
-          <h3 className="tittle-w3layouts my-lg-4 my-4">
+    <section className="  banner-bottom-wthreelayouts py-lg-5 py-3">
+      <div className="container-fluid ">
+        <div className=" container mx-auto inner-sec-shop px-lg-4 px-3">
+          <h3 className="tittle-w3layouts text-center pb-4 my-lg-4 my-4">
             Algunos de Nuestros Productos{" "}
           </h3>
-          <div className="row">
-            {/* Desde aca un solo Producto */}
-            {seisProd.map((producto) => (
-              <div
-                key={producto.slug}
-                className="col-md-3 product-men women_two"
-              >
-                <div className="product-googles-info googles">
-                  <div className="men-pro-item">
-                    <div className="men-thumb-item">
-                      <Image
-                        lazyLoad={true}
-                        data={producto.imagen.responsiveImage}
-                      />
-                      <div className="men-cart-pro">
-                        <div className="inner-men-cart-pro">
-                          <Link
-                            href="/productos/[id]"
-                            as={`/productos/${producto.slug}`}
-                          >
-                            <span
-                              
-                              className="link-product-add-cart"
-                            >
-                              Mostrar
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                      <span className="product-new-top">New</span>
-                    </div>
-                    <div className="item-info-product">
-                      <div className="info-product-price">
-                        <div className="grid_meta">
-                          <div className="product_price">
-                            <h4>
-                              <Link href="/">{producto.titulo}</Link>
-                            </h4>
-                            <div className="grid-price mt-2">
-                              <span className="money ">$575.00</span>
-                            </div>
-                          </div>
-                          <ul className="stars">
-                            <li>
-                              <a href="#">
-                                <i
-                                  className="fa fa-star"
-                                  aria-hidden="true"
-                                ></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i
-                                  className="fa fa-star"
-                                  aria-hidden="true"
-                                ></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i
-                                  className="fa fa-star"
-                                  aria-hidden="true"
-                                ></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i
-                                  className="fa fa-star"
-                                  aria-hidden="true"
-                                ></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i
-                                  className="fa fa-star-half-o"
-                                  aria-hidden="true"
-                                ></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="googles single-item hvr-outline-out">
-                          <form action="#" method="post">
-                            <input type="hidden" name="cmd" value="_cart" />
-                            <input type="hidden" name="add" value="1" />
-                            <input
-                              type="hidden"
-                              name="googles_item"
-                              value="Farenheit"
-                            />
-                            <input type="hidden" name="amount" value="575.00" />
-                            <button
-                              type="submit"
-                              className="googles-cart pgoogles-cart"
-                            >
-                              <i className="fas fa-cart-plus"></i>
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                      <div className="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          
+
+          <MiniProduct desde={false}  productos={seisProd} />
 
           <div className="row galsses-grids pt-lg-5 pt-3">
             <div className="col-lg-6 galsses-grid-left">
               <figure className="effect-lexi">
-                <img src="images/banner4.png" alt="" className="img-fluid" />
+                {/* <img src="images/banner4.png" alt="" className="img-fluid" /> */}
                 <figcaption>
                   <h3>
                     Editor's
@@ -263,6 +156,18 @@ const ProductosHome = ({ data: { allProductos } }) => {
           </div>
         </div>
       </div>
+      <style jsx>
+        {`
+         
+        `}
+      </style>
+      {/* .efecto-zoom:hover .imgg {
+            transform: scale(1.3);
+            transform: scale(1.3);
+            .efecto-zoom {
+              overflow: hidden;
+            }
+          } */}
     </section>
   );
 };

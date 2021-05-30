@@ -113,21 +113,19 @@ const Producto = ({ data }) => {
                 <div className="flexslider1">
                   <div className="slides">
                     <Carousel
-                      
                       infiniteLoop={true}
-                      
                       renderThumbs={renderCustomThumbs}
                     >
                       <div className="thumb-image">
                         {/* <img src={imagen.responsiveImage.src} alt="a" /> */}
 
-                        <Image lazyLoad={true} data={imagen.responsiveImage} />
+                        {/* <Image lazyLoad={true} data={imagen.responsiveImage} /> */}
                       </div>
                       <div className="thumb-image">
-                        <Image lazyLoad={true} data={imagen.responsiveImage} />
+                        {/* <Image lazyLoad={true} data={imagen.responsiveImage} /> */}
                       </div>
                       <div className="thumb-image">
-                        <Image lazyLoad={true} data={imagen.responsiveImage} />
+                        {/* <Image lazyLoad={true} data={imagen.responsiveImage} /> */}
                       </div>
                     </Carousel>
                   </div>

@@ -4,6 +4,9 @@ import Banner from "../components/Banner";
 import ProductosHome from "../components/ProductosHome";
 import { useRouter } from 'next/router'
 import GoToTop from "../components/GoToTop";
+import MiniProduct from "../components/MiniProduct";
+
+
 
 
 
@@ -18,23 +21,13 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ data }) {
-  
-  const router = useRouter()
-  const ruta = router.pathname
+
   return (
     <div>
       <Banner />
       <ProductosHome data={data} />
       <GoToTop ruta='/' />
       {/* <Head>{renderMetaTags(data.blog.seo.concat(data.site.favicon))}</Head> */}
-      {/* {data.allProductos.map((producto) => (
-        <article key={producto.id}>
-          <Image 
-            lazyLoad={true}
-            data={producto.imagen.responsiveImage} />
-          <h6>{producto.titulo}</h6>
-        </article>
-      ))} */}
     </div>
   );
 }
@@ -46,8 +39,9 @@ query MyQuery {
     queEs
     slug
     titulo
+    breveDescripcion
     imagen {
-      responsiveImage {
+      responsiveImage (imgixParams: { fit: crop, w: 350, h: 450, auto: format }) {
         src
         srcSet
         width
