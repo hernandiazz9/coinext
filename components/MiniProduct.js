@@ -20,6 +20,7 @@ const ProductHome = ({ productos, desde }) => {
             </div>
           </div>
         </Link>
+        
       ))}
       <style jsx>
         {`
