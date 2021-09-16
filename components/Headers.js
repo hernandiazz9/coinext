@@ -7,7 +7,7 @@ const Headers = ({ data }) => {
   const router = useRouter();
   console.log(router.pathname, "router");
 
-  return data ? (
+  return (
     <header>
       <div className="row">
         <div className="col-md-3 top-info text-left mt-lg-4">
@@ -16,7 +16,7 @@ const Headers = ({ data }) => {
             <li>
               <i className="fas fa-phone">-</i>
             </li>
-            <li className="number-phone mt-3"> {data.contacto.telefono}</li>
+            <li className="number-phone mt-3"> {data&&data.contacto.telefono}</li>
           </ul>
         </div>
         <div className="col-md-6 logo-w3layouts text-center">
@@ -138,8 +138,6 @@ const Headers = ({ data }) => {
         </div>
       </nav>
     </header>
-  ) : (
-    "cargando..."
   );
 };
 
