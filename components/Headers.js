@@ -103,7 +103,7 @@ const Headers = ({ data }) => {
                       : "nav-link "
                   }
                 >
-                  About
+                  Nosotros
                 </span>
               </Link>
             </li>
