@@ -1,40 +1,34 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import Image from 'next/image'
+import Image from "next/image";
 
 const Banner = () => {
   return (
     <div className="banner">
-      <Carousel showThumbs={false}	dynamicHeight={true} infiniteLoop={true}>
+      <Carousel showThumbs={false} dynamicHeight={true} infiniteLoop={true}>
         <div>
           {/* <img src={imagen.responsiveImage.src} alt="a" /> */}
           <img src={"/images/banner1.jpeg"} />
           <p>Instrumental Quirúrgico</p>
         </div>
-        <div >
-          <img 
-            src={'/images/banner2.jpeg'}
-          />
+        <div>
+          <img src={"/images/banner2.jpeg"} />
           <p>Instrumental Quirúrgico</p>
         </div>
-        <div >
-          <img 
-            src={'/images/banner4.png'}
-          />
+        <div>
+          <img src={"/images/banner4.png"} />
           <p>Instrumental Quirúrgico</p>
         </div>
-       
       </Carousel>
       <style jsx>
         {`
           div {
             position: relative;
             text-align: center;
-            
           }
           img {
             filter: brightness(50%);
-             height:40vw
+            height: 40vw;
           }
           p {
             position: absolute;
@@ -42,7 +36,17 @@ const Banner = () => {
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            font-size: 6rem;
+            font-size: 5rem;
+          }
+          @media (max-width: 964px) {
+            p {
+              font-size: 2.5rem;
+            }
+          }
+          @media (max-width: 500px) {
+            p {
+              font-size: 1.5rem;
+            }
           }
         `}
       </style>

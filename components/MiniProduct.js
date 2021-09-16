@@ -20,7 +20,7 @@ const ProductHome = ({ productos, desde }) => {
             </div>
           </div>
         </Link>
-        
+
       ))}
       <style jsx>
         {`
@@ -32,6 +32,12 @@ const ProductHome = ({ productos, desde }) => {
             grid-gap: 3rem;
 
           }
+          @media(max-width: 1400px){
+            .contenedor-cards-home {
+              max-width: 900px;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+          }
           .contenedor-cards-productos {
             max-width: 900px;
             margin: 0 auto;
@@ -39,6 +45,18 @@ const ProductHome = ({ productos, desde }) => {
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 2rem;
 
+          }
+          @media(max-width: 1395px){
+            .contenedor-cards-productos {
+              max-width: 700px;
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+          @media(max-width: 500px){
+            .contenedor-cards-productos {
+              max-width: 700px;
+              grid-template-columns: 1fr;
+            }
           }
           .card {
             border: 2px solid rgba(204, 204, 204, 0.43);

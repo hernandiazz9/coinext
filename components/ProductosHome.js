@@ -50,15 +50,13 @@ const ProductosHome = ({ data: { allProductos } }) => {
                 </div>
 
                 <h4 className="sub-tittle-w3layouts my-lg-4 my-3">
-                  Satisfaction Guaranteed
+                  Calidad Garantizada
                 </h4>
                 <p>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor
-                  ligula, eget lacinia odio sem nec elit.
+                  Tenemos la Mejor Calidad en Productos de Material Quirúrgico 
                 </p>
                 <p>
                   <a
-                    href="shop.html"
                     className="btn btn-sm animated-button gibson-three mt-4"
                   >
                     Shop Now
@@ -72,15 +70,13 @@ const ProductosHome = ({ data: { allProductos } }) => {
                 </div>
 
                 <h4 className="sub-tittle-w3layouts my-lg-4 my-3">
-                  Fast Shipping
+                  Envíos  a Todo el País
                 </h4>
                 <p>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor
-                  ligula, eget lacinia odio sem nec elit.
+                  Realizamos Envíos  a Todo el País 
                 </p>
                 <p>
                   <a
-                    href="shop.html"
                     className="btn btn-sm animated-button gibson-three mt-4"
                   >
                     Shop Now
@@ -102,7 +98,6 @@ const ProductosHome = ({ data: { allProductos } }) => {
                 </p>
                 <p>
                   <a
-                    href="shop.html"
                     className="btn btn-sm animated-button gibson-three mt-4"
                   >
                     Shop Now

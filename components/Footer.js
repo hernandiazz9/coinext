@@ -1,6 +1,8 @@
 import Link from "next/link";
-const Footer = () => {
-  return (
+
+const Footer = ({data}) => {
+
+  return data ? (
     <footer className="py-lg-5 py-3">
       <div className="container-fluid px-lg-5 px-3">
         <div className="row footer-top-w3layouts">
@@ -9,14 +11,16 @@ const Footer = () => {
               <h3>Quienes Somos</h3>
             </div>
             <div className="footer-text">
-              <h5 style={{
-                color: "white",
-                paddingBottom:'1.7rem'
-              }}>Cirugía Ósea Instrumental</h5>
+              <h5
+                style={{
+                  color: "white",
+                  paddingBottom: "1.7rem",
+                }}
+              >
+                Cirugía Ósea Instrumental
+              </h5>
               <p>
-                Somos una empresa familiar heredando todos los conocimientos
-                familiarmente Somos una empresa familiar heredando todos los
-                conocimientos familiarmente
+                  {data.allPaginas[0].sobrenosotroschico}
               </p>
               <ul className="footer-social text-left mt-lg-4 mt-3">
                 <li className="mx-2">
@@ -58,12 +62,12 @@ const Footer = () => {
             </div>
             <div className="contact-info">
               <h4>Direccion:</h4>
-              <p>Bº Pan de Azucar, villa allende. Cordoba, Argentina.</p>
+              <p>{data.contacto.direccion}</p>
               <div className="phone">
                 <h4>Contacto:</h4>
-                <p>Phone: +358128392</p>
+                <p>Phone:{data.contacto.telefono} </p>
                 <p>
-                  Email: <a href="mailto:info@example.com">layerba@gmail.com</a>
+              Email: {data.contacto.email}
                 </p>
               </div>
             </div>
@@ -88,17 +92,20 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
         </div>
         <div className="copyright-w3layouts mt-4">
           <p className="copy-right text-center ">
-            &copy; 1985 Instrumental Quirúrgico. Todos los derechos reservados | Diseñado por
-            <a href="#"> Bernael </a>
+            &copy; 1985 Instrumental Quirúrgico. Todos los derechos reservados |
+            Diseñado por
+            <a href="#"> HDDesign </a>
           </p>
         </div>
       </div>
     </footer>
+  ) : (
+    "cargando..."
   );
 };
-
 export default Footer;
+
+

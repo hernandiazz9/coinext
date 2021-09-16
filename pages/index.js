@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
 import { request } from "./api/datocms";
 import Banner from "../components/Banner";
 import ProductosHome from "../components/ProductosHome";
-import { useRouter } from 'next/router'
+
 import GoToTop from "../components/GoToTop";
 import MiniProduct from "../components/MiniProduct";
-
-
-
-
 
 export async function getStaticProps() {
   const data = await request({
@@ -21,12 +16,11 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ data }) {
-
   return (
     <div>
       <Banner />
       <ProductosHome data={data} />
-      <GoToTop ruta='/' />
+      <GoToTop ruta="/" />
       {/* <Head>{renderMetaTags(data.blog.seo.concat(data.site.favicon))}</Head> */}
     </div>
   );

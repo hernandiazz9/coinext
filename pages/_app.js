@@ -7,8 +7,18 @@ import '../styles/style.css'
 import '../styles/fontawesome-all.css'
 import '../styles/contact.css'
 
+import { request } from "../pages/api/datocms";
 
-function MyApp({ Component, pageProps }) {
+// export async function getStaticProps() {
+//   const data = await request({
+//     query: FOOTER_QUERY2,
+//   });
+//   console.log(data, 'probnado data');
+//   return { props: { data } };
+// }
+
+function MyApp({ Component,pageProps }) {
+
   return(
     <Layout>
       <Component {...pageProps} />
@@ -17,3 +27,28 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+// const FOOTER_QUERY2 = `
+// {
+//   contacto {
+//     direccion
+//     email
+//     telefono
+//   }
+//   allPaginas {
+//     titulo
+//     contenido
+//     imagen {
+//       responsiveImage {
+//         src
+//         srcSet
+//         height
+//         width
+//         sizes
+//         webpSrcSet
+//       }
+//     }
+//     slug
+//   }
+// }
+// `;

@@ -2120,7 +2120,9 @@ ul.links li a:hover {
     font-size: 2.2em;
   }
 }
-
+.top-info-cart ul li button i:hover {
+  color: #ff4e00;
+}
 @media (max-width: 800px) {
   .top-info,
   .top-info-cart {
