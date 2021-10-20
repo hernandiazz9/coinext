@@ -17,7 +17,7 @@ git clone https://github.com/hernandiazz9/coinext.git
 npm install
 ```
 
-## Imagenes 🛠️
+## Imagenes
 
 <img width="1615" alt="Screen Shot 2021-10-20 at 18 00 03" src="https://user-images.githubusercontent.com/62017712/138178630-f3538267-b74c-43b7-8a0c-53e86f50dc98.png">
 <img width="1615" alt="Screen Shot 2021-10-20 at 18 00 39" src="https://user-images.githubusercontent.com/62017712/138178913-a917a9f2-c048-48c9-b3e9-9378528265df.png">
