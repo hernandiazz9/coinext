@@ -17,6 +17,13 @@ git clone https://github.com/hernandiazz9/coinext.git
 npm install
 ```
 
+## Imagenes 🛠️
+
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 00 03" src="https://user-images.githubusercontent.com/62017712/138178630-f3538267-b74c-43b7-8a0c-53e86f50dc98.png">
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 00 39" src="https://user-images.githubusercontent.com/62017712/138178913-a917a9f2-c048-48c9-b3e9-9378528265df.png">
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 01 10" src="https://user-images.githubusercontent.com/62017712/138178998-1468427a-8eed-448c-800f-d3a90dbee35d.png">
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 01 22" src="https://user-images.githubusercontent.com/62017712/138179005-9dc270fa-2cca-41dd-b8cd-9bd8a834f747.png">
+
 
 ## Construido con 🛠️
 
@@ -29,7 +36,7 @@ _Algunas de las tecnologías utlizadas_
 
 ## Mensiones 🖇️
 
-_Proyecto  **auto administrable**, es decir el usuario carga sus productos y automaticamente se reflejan en la pagina _
+_Proyecto  **auto administrable**, es decir el usuario carga sus productos y automaticamente se reflejan en la pagina_
 
 ## Autores ✒️
 
