@@ -17,6 +17,16 @@ git clone https://github.com/hernandiazz9/coinext.git
 npm install
 ```
 
+Crear un api token en [DatoCMS](https://datocms.com) y colocarlo en un archivo .env
+
+DATOCMS_API_TOKEN = 'your_api_token'
+
+Y crear los siguientes modelos..
+
+<img width="400" alt="Screen Shot 2021-10-20 at 19 26 25" src="https://user-images.githubusercontent.com/62017712/138181191-6ea4c042-2359-4f15-8838-9532ced84e61.png"> <img width="400" alt="Screen Shot 2021-10-20 at 19 26 03" src="https://user-images.githubusercontent.com/62017712/138181207-63494cc4-563f-4634-b78e-94565a3beb68.png">
+<img width="400" alt="Screen Shot 2021-10-20 at 19 25 34" src="https://user-images.githubusercontent.com/62017712/138181218-c9e1acaf-77c9-4c3e-adb6-6a1bcd23c299.png"> <img width="400" alt="Screen Shot 2021-10-20 at 19 25 17" src="https://user-images.githubusercontent.com/62017712/138181221-7c13a9ce-c4d8-4207-b859-499043cf97f3.png">
+
+
 ## Imagenes
 
 <img width="1615" alt="Screen Shot 2021-10-20 at 18 00 03" src="https://user-images.githubusercontent.com/62017712/138178630-f3538267-b74c-43b7-8a0c-53e86f50dc98.png">
