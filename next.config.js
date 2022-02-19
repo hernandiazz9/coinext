@@ -1,12 +1,14 @@
 module.exports = {
-    future: {
-      webpack5: false,
-    },
-  }
+  webpack5: true,
 
-  module.exports = {
-    images: {
-      loader: "imgix",
-      path: "",
-    }
-  }
+  output: {
+    hashFunction: "xxhash64",
+  },
+};
+
+// module.exports = {
+//   images: {
+//     loader: "imgix",
+//     path: "",
+//   }
+// }
