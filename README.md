@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CIRUGIA OSEA INSTRUMENTAL C.O.I
 
-## Getting Started
+_Aplicación web de catalogó de productos  hecha con Next js, GraphQL y DatoCMS_
 
-First, run the development server:
+[DEMO](https://coinext.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
+
+## Comenzando 🚀
+
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+
+### Instalación 🔧
+
+_Clonar el repositorio e instalar dependencias._
+
+```
+git clone https://github.com/hernandiazz9/coinext.git
+```
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Crear un api token en [DatoCMS](https://datocms.com) y colocarlo en un archivo .env
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+DATOCMS_API_TOKEN = 'your_api_token'
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Y crear los siguientes modelos..
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img width="400" alt="Screen Shot 2021-10-20 at 19 26 25" src="https://user-images.githubusercontent.com/62017712/138181191-6ea4c042-2359-4f15-8838-9532ced84e61.png"> <img width="400" alt="Screen Shot 2021-10-20 at 19 26 03" src="https://user-images.githubusercontent.com/62017712/138181207-63494cc4-563f-4634-b78e-94565a3beb68.png">
+<img width="400" alt="Screen Shot 2021-10-20 at 19 25 34" src="https://user-images.githubusercontent.com/62017712/138181218-c9e1acaf-77c9-4c3e-adb6-6a1bcd23c299.png"> <img width="400" alt="Screen Shot 2021-10-20 at 19 25 17" src="https://user-images.githubusercontent.com/62017712/138181221-7c13a9ce-c4d8-4207-b859-499043cf97f3.png">
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Imagenes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 00 03" src="https://user-images.githubusercontent.com/62017712/138178630-f3538267-b74c-43b7-8a0c-53e86f50dc98.png">
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 00 39" src="https://user-images.githubusercontent.com/62017712/138178913-a917a9f2-c048-48c9-b3e9-9378528265df.png">
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 01 10" src="https://user-images.githubusercontent.com/62017712/138178998-1468427a-8eed-448c-800f-d3a90dbee35d.png">
+<img width="1615" alt="Screen Shot 2021-10-20 at 18 01 22" src="https://user-images.githubusercontent.com/62017712/138179005-9dc270fa-2cca-41dd-b8cd-9bd8a834f747.png">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Construido con 🛠️
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+_Algunas de las tecnologías utlizadas_
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* [Next js](https://nextjs.org/docs/api-reference/create-next-app) - Framework de React js.
+* [NPM](https://www.npmjs.com/) - Manejador de dependencias
+* [GraphQL](https://graphql.org/) - Obtención  de datos del CMS 
+* [DatoCMS](https://www.datocms.com/) - Headless CMS
+
+## Mensiones 🖇️
+
+_Proyecto  **auto administrable**, es decir el usuario carga sus productos y automaticamente se reflejan en la pagina_
+
+## Autores ✒️
+
+Realice este proyecto de manera gratuita con fines educativos y para ayudar a una PyME.
+
+
+## Expresiones de Gratitud 🎁
+
+* Proyecto auto administrable para Cirugia Ósea  Instrumental.
+* Invito una cerveza 🍺 a [**German Heredia**](https://www.instagram.com/cirugiaoseainstrumental/) 
+* Un gran amigo y Encargado de una importante fabrica de instrumental quirúrgico.[**COI**](https://www.instagram.com/cirugiaoseainstrumental/) 
+* MUCHISIMAS GRACIAS POR LEER!.
+
+pd: Hay mas **Proyectos**!!!
+
+
+
+---
+⌨️ con ❤️ por [HDDev](https://github.com/hernandiazz9) 😊
