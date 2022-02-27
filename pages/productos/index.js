@@ -6,12 +6,19 @@ import GoToTop from "../../components/GoToTop";
 import MiniProduct from "../../components/MiniProduct";
 import { useRouter } from "next/router";
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const data = await request({
+//     query: PRODUCT_QUERY,
+//     // variables:{cuantosQuiero, desdeDonde }
+//   });
+//   return { props: { data }, revalidate:10 };
+// }
+export async function getServerSideProps() {
   const data = await request({
     query: PRODUCT_QUERY,
     // variables:{cuantosQuiero, desdeDonde }
   });
-  return { props: { data }, revalidate:10 };
+  return { props: { data }};
 }
 ///---------------------------------------------
 const index = ({ data: { allProductos, allCategoriaxes } }) => {
