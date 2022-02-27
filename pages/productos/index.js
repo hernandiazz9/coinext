@@ -11,7 +11,7 @@ export async function getStaticProps() {
     query: PRODUCT_QUERY,
     // variables:{cuantosQuiero, desdeDonde }
   });
-  return { props: { data } };
+  return { props: { data }, revalidate:10 };
 }
 ///---------------------------------------------
 const index = ({ data: { allProductos, allCategoriaxes } }) => {
