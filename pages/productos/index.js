@@ -118,6 +118,9 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
 };
 
 export default index;
+
+
+
 const PRODUCT_QUERY = `
 {
   allProductos {
