@@ -16,13 +16,18 @@ const Headers = ({ data }) => {
             <li>
               <i className="fas fa-phone">-</i>
             </li>
-            <li className="number-phone mt-3"> {data&&data.contacto.telefono}</li>
+            <li className="number-phone mt-3">
+              {" "}
+              {data && data.contacto.telefono}
+            </li>
           </ul>
         </div>
         <div className="col-md-6 logo-w3layouts text-center">
           <h1 className="logo-w3layouts">
             <span className="navbar-brand">
-              <Link href="/">instrumental</Link>
+              <Link href="/">
+                <img src={"/images/coiMetal.png"} style={{width:'200px'}} alt="logo" />
+              </Link>
             </span>
           </h1>
         </div>
