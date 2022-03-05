@@ -17,6 +17,7 @@ export async function getServerSideProps() {
   const data = await request({
     query: PRODUCT_QUERY,
     // variables:{cuantosQuiero, desdeDonde }
+    
   });
   return { props: { data }};
 }
