@@ -20,6 +20,7 @@ export async function getServerSideProps() {
     
   });
   return { props: { data }};
+  
 }
 ///---------------------------------------------
 const index = ({ data: { allProductos, allCategoriaxes } }) => {
