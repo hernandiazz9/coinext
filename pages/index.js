@@ -5,15 +5,11 @@ import ProductosHome from "../components/ProductosHome";
 import GoToTop from "../components/GoToTop";
 import MiniProduct from "../components/MiniProduct";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await request({
     query: HOMEPAGE_QUERY,
   });
-  return {
-    props: {
-      data,
-    },
-  };
+  return { props: { data }};
 }
 export default function Home({ data }) {
   return (

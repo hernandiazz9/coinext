@@ -15,7 +15,7 @@ const Layout = ({children}) => {
         // variables: { first: 10 },
         token: "63a093965238a42361bb30b71d23ca",
       });
-      console.log(data, "status, error, data ");
+      // console.log(data, "status, error, data ");
     
 
 

@@ -3,6 +3,7 @@ import { request } from "../../pages/api/datocms";
 import { Image } from "react-datocms";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import Link from "next/link";
 // import { async } from "regenerator-runtime";
 // import Head from "next/head";
 // import Head from '../../public/css/bootstrap.css'
@@ -48,7 +49,6 @@ export const getStaticPaths = async () => {
     query: SINGLE_PRODUCT_QUERY_PATHS,
   });
   const paths = await res.allProductos.map((producto) => {
-    // console.log(producto.slug);
     return {
       params: { id: producto.slug },
     };
@@ -57,7 +57,6 @@ export const getStaticPaths = async () => {
 };
 //query producto con x paths antes obtenido
 export const getStaticProps = async (context) => {
-  // console.log(error, "viendo que tiene el error");
   const slug = await context.params.id;
   const data = await request({
     query: SINGLE_PRODUCT_QUERY,
@@ -66,36 +65,50 @@ export const getStaticProps = async (context) => {
   return { props: { data } };
 };
 const Producto = ({ data }) => {
-
-  if(!data)return null
-  const {allProductos} = data;
-   const { imagen, breveDescripcion, titulo, categorias } = allProductos[0];
+  if (!data) return null;
+  const { allProductos } = data;
+  const {
+    imagen,
+    breveDescripcion,
+    titulo,
+    categorias,
+    queEs,
+  } = allProductos[0];
 
   const renderCustomThumbs = () => {
     return [
       <picture key="01">
-        <source data-srcset={imagen&&imagen.responsiveImage.src} type="image/jpg" />
+        <source
+          data-srcset={imagen && imagen.responsiveImage.src}
+          type="image/jpg"
+        />
         <img
           key="01"
-          src={imagen&&imagen.responsiveImage.src}
+          src={imagen && imagen.responsiveImage.src}
           alt="First Thumbnail"
           height="70"
         />
       </picture>,
       <picture key="02">
-        <source data-srcset={imagen&&imagen.responsiveImage.src} type="image/jpg" />
+        <source
+          data-srcset={imagen && imagen.responsiveImage.src}
+          type="image/jpg"
+        />
         <img
           key="02"
-          src={imagen&&imagen.responsiveImage.src}
+          src={imagen && imagen.responsiveImage.src}
           alt="Second Thumbnail"
           height="70"
         />
       </picture>,
       <picture key="03">
-        <source data-srcset={imagen&&imagen.responsiveImage.src} type="image/jpg" />
+        <source
+          data-srcset={imagen && imagen.responsiveImage.src}
+          type="image/jpg"
+        />
         <img
           key="03"
-          src={imagen&&imagen.responsiveImage.src}
+          src={imagen && imagen.responsiveImage.src}
           alt="Third Thumbnail"
           height="70"
         />
@@ -134,58 +147,33 @@ const Producto = ({ data }) => {
               </div>
             </div>
             <div className="pt-5 pl-7  col-lg-6 single-right-left simpleCart_shelfItem">
-              <div className="sticky-category">
-                <h3>{titulo&&titulo}</h3>
-                <p>
-                  algo
-                </p>
-                <div className="rating1">
-                  <ul className="stars">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-star-o" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  </ul>
+              <div className="pt-5 sticky-category">
+                <h1>{titulo && titulo}</h1>
+                <div className="description">
+                  <p className="breve">
+                    {breveDescripcion && breveDescripcion}
+                  </p>
+                  <p className="breve"> {queEs && queEs} </p>
                 </div>
                 <div className="description">
-                  <h3>Breve Descripción</h3>
-                  <h5>{breveDescripcion&&breveDescripcion} </h5>
-                </div>
-                <div className="description">
-                  <h3>Categorias</h3>
-                  {categorias&&categorias.map((categoria) => (
-                    //poner link y linkear a categorias
-                    <span key={categoria.id}>
-                      <p>{categoria.categoria}</p>
-                    </span>
-                  ))}
+                  <h4>Categorias</h4>
+                  <div className="categorias">
+                    {categorias &&
+                      categorias.map((categoria) => (
+                        <Link
+                          key={categoria.id}
+                          href={`/productos?categoria=${categoria.id}`}
+                        >
+                          <span key={categoria.id}>{categoria.categoria}</span>
+                        </Link>
+                      ))}
+                  </div>
                 </div>
               </div>
             </div>
             <div className="clearfix"></div>
 
-            <div className="responsive_tabs">
+            {/* <div className="responsive_tabs">
               <div id="horizontalTab">
                 <div className="resp-tabs-container">
                   <div className="tab1">
@@ -213,11 +201,10 @@ const Producto = ({ data }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-
     </section>
   );
 };

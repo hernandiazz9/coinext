@@ -5,11 +5,11 @@ import { useState } from "react";
 const Headers = ({ data }) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  console.log(router.pathname, "router");
+  // console.log(router.pathname, "router");
 
   return (
     <header>
-      <div className="row">
+      <div className="row text-center">
         <div className="col-md-3 top-info text-left mt-lg-4">
           <h6>Comunicate!</h6>
           <ul>
@@ -17,7 +17,6 @@ const Headers = ({ data }) => {
               <i className="fas fa-phone">-</i>
             </li>
             <li className="number-phone mt-3">
-              {" "}
               {data && data.contacto.telefono}
             </li>
           </ul>
@@ -26,7 +25,7 @@ const Headers = ({ data }) => {
           <h1 className="logo-w3layouts">
             <span className="navbar-brand">
               <Link href="/">
-                <img src={"/images/coiMetal.png"} style={{width:'200px'}} alt="logo" />
+                <img src={"/images/coiMetal.png"} style={{width:'200px', cursor:'pointer'}} alt="logo" />
               </Link>
             </span>
           </h1>

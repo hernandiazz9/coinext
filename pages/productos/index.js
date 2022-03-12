@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { request } from "../api/datocms";
 import Link from "next/link";
 import { Image } from "react-datocms";
@@ -17,51 +17,60 @@ export async function getServerSideProps() {
   const data = await request({
     query: PRODUCT_QUERY,
     // variables:{cuantosQuiero, desdeDonde }
-    
   });
-  return { props: { data }};
-  
+  return { props: { data } };
 }
 ///---------------------------------------------
 const index = ({ data: { allProductos, allCategoriaxes } }) => {
   // console.log(allProductos);
+  const router = useRouter();
   const [productosTodos, setproductosTodos] = useState([]);
   const [hastaDonde, setHastaDonde] = useState(9);
-  const [checked, setChecked] = useState("");
+  const [checked, setChecked] = useState("todos");
+  const [searchStr, setSearchStr] = useState("");
 
-  if (productosTodos.length === 0) {
-    setproductosTodos(allProductos.slice(0, hastaDonde));
-  }
   const nextProductos = () => {
     const num = hastaDonde + 9;
     setHastaDonde((hastaDonde) => hastaDonde + 9);
     setproductosTodos(allProductos.slice(0, num));
   };
 
-  //scrip para filtrar productos.
-  const click = (categoClick, categoId) => {
-    if (checked === categoClick) {
-      setChecked("");
+  useEffect(() => {
+    if (productosTodos.length === 0) {
       setproductosTodos(allProductos.slice(0, hastaDonde));
-    } else {
-      const filtrados = allProductos.filter((producto) => {
-        const categoria = producto.categorias.map((cate) => {
-          return cate.categoria;
-        });
-        return categoria.includes(categoClick);
-      });
-      console.log(filtrados);
-      setproductosTodos(filtrados);
-      setChecked(categoClick);
     }
+    if (router.query.categoria) {
+      handleRadio(router.query.categoria);
+    }
+  }, []);
+  //script para filtrar productos.
+  const handleRadio = (categoId) => {
+    setChecked(categoId);
+    if (categoId === "todos") {
+      return setproductosTodos(allProductos.slice(0, hastaDonde));
+    }
+    const filtrados = allProductos.filter((producto) => {
+      const categoriasId = producto.categorias.map((cate) => {
+        return cate.id;
+      });
+      return categoriasId.includes(categoId);
+    });
+    setproductosTodos(filtrados);
   };
-  const router = useRouter();
-  const buscar = (e) => {
-    console.log(router.query.search, "1");
+  const handleSearch = (e) => {
+    setSearchStr(e.target.value);
+    const filtrados = allProductos.filter((producto) => {
+      const words =
+        producto.titulo.toLowerCase() +
+        producto.queEs.toLowerCase() +
+        producto.breveDescripcion.toLowerCase();
+      return words.indexOf(e.target.value.toLowerCase()) !== -1;
+    });
+    console.log(filtrados);
+    setproductosTodos(filtrados);
+  };
 
-    console.log(router.query.search);
-    click(router.query.search);
-  };
+  // const buscar = (e) => {};
 
   return (
     <div className="container ">
@@ -76,26 +85,47 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
                   type="search"
                   name="search"
                   placeholder="Buscar..."
-                  required=""
+                  onChange={handleSearch}
+                  required
                 />
-                <button type="button" onClick={() => buscar()} className="btn1">
+                {/* <button type="button" onClick={() => buscar()} className="btn1">
                   <i className="fas fa-search"></i>
-                </button>
+                </button> */}
                 <div className="clearfix"> </div>
               </form>
             </div>
-            {/* <!-- price range --> */}
+            {/* categorias */}
             <div className="range left-side">
               <h3 className="agileits-sear-head">Categorías</h3>
               <ul>
+                <li>
+                  <input
+                    type="radio"
+                    value="todos"
+                    id="todos"
+                    name="categorias"
+                    checked={checked === "todos"}
+                    onChange={(e) => handleRadio(e.target.id)}
+                    className="checked"
+                  />
+                  <label htmlFor="todos" className="span">
+                    Todos
+                  </label>
+                </li>
                 {allCategoriaxes.map((categoria) => (
                   <li key={categoria.id}>
                     <input
-                      type="checkbox"
-                      onClick={() => click(categoria.categoria, categoria.id)}
+                      type="radio"
+                      value={categoria.categoria}
+                      checked={checked === categoria.id}
+                      id={categoria.id}
+                      name="categorias"
+                      onChange={(e) => handleRadio(e.target.id)}
                       className="checked"
                     />
-                    <span className="span">{categoria.categoria}</span>
+                    <label htmlFor={categoria.id} className="span">
+                      {categoria.categoria}
+                    </label>
                   </li>
                 ))}
               </ul>
@@ -120,8 +150,6 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
 };
 
 export default index;
-
-
 
 const PRODUCT_QUERY = `
 {

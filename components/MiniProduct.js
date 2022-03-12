@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Image } from "react-datocms";
 
 const ProductHome = ({ productos, desde }) => {
-  console.log(productos);
+  // console.log(productos);
   return (
     <div
       className={desde ? "contenedor-cards-productos" : "contenedor-cards-home"}
