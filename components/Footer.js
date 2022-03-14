@@ -39,6 +39,7 @@ const Footer = ({ data }) => {
                   <a target="_blank" href="https://www.instagram.com/cirugiaoseainstrumental/?hl=en">
                     <span className="fab fa-instagram"></span>
                   </a>
+                  
                 </li>
 
               </ul>
