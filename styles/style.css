@@ -262,7 +262,7 @@ li.number-phone {
 .sticky-category {
   position: -webkit-sticky !important; /* Safari */
   position: sticky !important;
-  top: 0 !important;
+  top: 70px !important;
 }
 
 .search {
@@ -502,7 +502,9 @@ a.animated-button.gibson-three:hover:after {
   opacity: 1;
   color: #ff4e00;
 }
-
+.my-hover:hover{
+  background-color:#ff4e00 ;
+}
 /* Show it is fixed to the top */
 
 /*--//banner --*/
@@ -2437,3 +2439,9 @@ ul.links li a:hover {
 }
 
 /*-- //responsive media queries --*/
+.sticky{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}

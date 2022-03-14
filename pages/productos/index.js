@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { request } from "../api/datocms";
-import Link from "next/link";
-import { Image } from "react-datocms";
 import GoToTop from "../../components/GoToTop";
 import MiniProduct from "../../components/MiniProduct";
 import { useRouter } from "next/router";
@@ -22,12 +20,11 @@ export async function getServerSideProps() {
 }
 ///---------------------------------------------
 const index = ({ data: { allProductos, allCategoriaxes } }) => {
-  // console.log(allProductos);
+  console.log(allProductos);
   const router = useRouter();
   const [productosTodos, setproductosTodos] = useState([]);
   const [hastaDonde, setHastaDonde] = useState(9);
   const [checked, setChecked] = useState("todos");
-  const [searchStr, setSearchStr] = useState("");
 
   const nextProductos = () => {
     const num = hastaDonde + 9;
@@ -58,7 +55,6 @@ const index = ({ data: { allProductos, allCategoriaxes } }) => {
     setproductosTodos(filtrados);
   };
   const handleSearch = (e) => {
-    setSearchStr(e.target.value);
     const filtrados = allProductos.filter((producto) => {
       const words =
         producto.titulo.toLowerCase() +

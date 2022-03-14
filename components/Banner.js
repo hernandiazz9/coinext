@@ -1,23 +1,29 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-
+// https://www.npmjs.com/package/react-responsive-carousel
 const Banner = () => {
   return (
     <div className="banner">
-      <Carousel showThumbs={false} dynamicHeight={true} infiniteLoop={true}>
+      <Carousel
+        autoPlay={true}
+        stopOnHover={false}
+        interval={5000}
+        showThumbs={false}
+        dynamicHeight={true}
+        infiniteLoop={true}
+      >
         <div>
-          {/* <img src={imagen.responsiveImage.src} alt="a" /> */}
           <img src={"/images/banner1.jpeg"} />
-          <p>Instrumental Quirúrgico</p>
+          <p>Fabricacion de Instrumental Quirúrgico</p>
         </div>
         <div>
           <img src={"/images/banner2.jpeg"} />
-          <p>Instrumental Quirúrgico</p>
+          <p>Más de 20 años de experiencia</p>
         </div>
         <div>
           <img src={"/images/banner4.png"} />
-          <p>Instrumental Quirúrgico</p>
+          <p>Estamos en Córdoba, consultanos por envíos</p>
         </div>
       </Carousel>
       <style jsx>
@@ -36,7 +42,9 @@ const Banner = () => {
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            font-size: 5rem;
+            font-size: 4rem;
+            font-weight: bold;
+
           }
           @media (max-width: 964px) {
             p {

@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-const Footer = ({data}) => {
-
+const Footer = ({ data }) => {
   return data ? (
     <footer className="py-lg-5 py-3">
       <div className="container-fluid px-lg-5 px-3">
@@ -19,40 +18,29 @@ const Footer = ({data}) => {
               >
                 Cirugía Ósea Instrumental
               </h5>
-              <p>
-                  {data.allPaginas[0].sobrenosotroschico}
-              </p>
+              <p>{data.allPaginas[0].sobrenosotroschico}</p>
               <ul className="footer-social text-left mt-lg-4 mt-3">
                 <li className="mx-2">
-                  <a href="#">
+                  <a target="_blank" href="https://www.facebook.com/COIcirugiaoseaintrumental">
                     <span className="fab fa-facebook-f"></span>
                   </a>
                 </li>
-                <li className="mx-2">
+                {/* <li className="mx-2">
                   <a href="#">
                     <span className="fab fa-twitter"></span>
                   </a>
-                </li>
-                <li className="mx-2">
+                </li> */}
+                {/* <li className="mx-2">
                   <a href="#">
                     <span className="fab fa-google-plus-g"></span>
                   </a>
-                </li>
+                </li> */}
                 <li className="mx-2">
-                  <a href="#">
-                    <span className="fab fa-linkedin-in"></span>
+                  <a target="_blank" href="https://www.instagram.com/cirugiaoseainstrumental/?hl=en">
+                    <span className="fab fa-instagram"></span>
                   </a>
                 </li>
-                <li className="mx-2">
-                  <a href="#">
-                    <span className="fas fa-rss"></span>
-                  </a>
-                </li>
-                <li className="mx-2">
-                  <a href="#">
-                    <span className="fab fa-vk"></span>
-                  </a>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -66,9 +54,7 @@ const Footer = ({data}) => {
               <div className="phone">
                 <h4>Contacto:</h4>
                 <p>Phone:{data.contacto.telefono} </p>
-                <p>
-              Email: {data.contacto.email}
-                </p>
+                <p>Email: {data.contacto.email}</p>
               </div>
             </div>
           </div>
@@ -81,7 +67,7 @@ const Footer = ({data}) => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link href="/about">Nosotros</Link>
               </li>
               <li>
                 <Link href="/productos">Productos</Link>
@@ -97,7 +83,7 @@ const Footer = ({data}) => {
           <p className="copy-right text-center ">
             &copy; 1985 Instrumental Quirúrgico. Todos los derechos reservados |
             Diseñado por
-            <a href="#"> HDDesign </a>
+            <a href='https://hddev.netlify.app/'> {"< HDev /> "}</a>
           </p>
         </div>
       </div>
@@ -107,5 +93,3 @@ const Footer = ({data}) => {
   );
 };
 export default Footer;
-
-

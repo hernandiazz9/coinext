@@ -8,21 +8,24 @@ const ProductHome = ({ productos, desde }) => {
       className={desde ? "contenedor-cards-productos" : "contenedor-cards-home"}
     >
       {productos.map((producto) => (
-        <Link key={producto.id} href={`productos/${producto.slug}`}>
+        <Link key={producto.id} href={`productos/${producto.slug.trim()}`}>
           <div className="card">
             <div className="imagen-card">
               <Image
                 style={{ borderRadius: "8px" }}
                 lazyLoad={true}
-                data={producto.imagen.responsiveImage}
+                data={producto.imagen[0].responsiveImage}
               />
             </div>
             <div className="contenido">
               <h3 className="titulo">{producto.titulo}</h3>
               <p className="breve-descripcion">{producto.breveDescripcion}</p>
-              {desde&&producto.categorias.map(categoria=>(
-                <span key={categoria.id} className="categorias">{categoria.categoria}</span>
-              ))}
+              {desde &&
+                producto.categorias.map((categoria) => (
+                  <span key={categoria.id} className="categorias">
+                    {categoria.categoria}
+                  </span>
+                ))}
             </div>
           </div>
         </Link>

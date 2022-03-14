@@ -1,9 +1,7 @@
 import { request } from "./api/datocms";
 import Banner from "../components/Banner";
 import ProductosHome from "../components/ProductosHome";
-
 import GoToTop from "../components/GoToTop";
-import MiniProduct from "../components/MiniProduct";
 
 export async function getServerSideProps() {
   const data = await request({

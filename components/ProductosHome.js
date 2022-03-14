@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Image } from "react-datocms";
-import MiniProduct from './MiniProduct'
+import MiniProduct from "./MiniProduct";
 
 const ProductosHome = ({ data: { allProductos } }) => {
   const seisProd = allProductos.slice(0, 6);
@@ -11,32 +11,43 @@ const ProductosHome = ({ data: { allProductos } }) => {
           <h3 className="tittle-w3layouts text-center pb-4 my-lg-4 my-4">
             Nuestros Productos{" "}
           </h3>
-          
 
-          <MiniProduct desde={false}  productos={seisProd} />
+          <MiniProduct desde={false} productos={seisProd} />
+          <div className="container text-center mt-5">
+            <Link href="/productos">
+              <a className="btn btn-sm my-hover text-black animated-button gibson-three mt-4">
+                Más Productos
+              </a>
+            </Link>
+          </div>
 
           <div className="row galsses-grids pt-lg-5 pt-3">
             <div className="col-lg-6 galsses-grid-left">
               <figure className="effect-lexi">
-                <img src="images/banner4.png" alt="" className="img-fluid" />
+                <img src="images/banner2.jpeg" alt="" className="img-fluid" />
                 <figcaption>
                   <h3>
-                    Editor's
-                    <span>Pick</span>
+                    Quienes
+                    <span> Somos</span>
                   </h3>
-                  <p> Express your style now.</p>
+                  <p style={{ color: "white", fontWeight: "bold" }}>
+                    {" "}
+                    Cirugia Ósea Instrumental
+                  </p>
                 </figcaption>
               </figure>
             </div>
             <div className="col-lg-6 galsses-grid-left">
               <figure className="effect-lexi">
-                <img src="images/banner1.jpeg" alt="" className="img-fluid" />
+                <img src="images/banner3.jpeg" alt="" className="img-fluid" />
                 <figcaption>
                   <h3>
-                    Editor's
-                    <span>Pick</span>
+                    Que
+                    <span> Hacemos?</span>
                   </h3>
-                  <p>Express your style now.</p>
+                  <p style={{ color: "white", fontWeight: "bold" }}>
+                    Fabricamos Instrumental Quirúrgico
+                  </p>
                 </figcaption>
               </figure>
             </div>
@@ -53,14 +64,14 @@ const ProductosHome = ({ data: { allProductos } }) => {
                   Calidad Garantizada
                 </h4>
                 <p>
-                  Tenemos la Mejor Calidad en Productos de Material Quirúrgico 
+                  Tenemos la Mejor Calidad en Productos de Material Quirúrgico
                 </p>
                 <p>
-                  <a
-                    className="btn btn-sm animated-button gibson-three mt-4"
-                  >
-                    Shop Now
-                  </a>
+                  <Link href="/productos">
+                    <a className="btn btn-sm my-hover animated-button gibson-three mt-4">
+                      Productos
+                    </a>
+                  </Link>
                 </p>
               </div>
               {/* <!-- /.col-lg-4 --> */}
@@ -70,17 +81,15 @@ const ProductosHome = ({ data: { allProductos } }) => {
                 </div>
 
                 <h4 className="sub-tittle-w3layouts my-lg-4 my-3">
-                  Envíos  a Todo el País
+                  Envíos a Todo el País
                 </h4>
+                <p>Realizamos envíos a todo el País</p>
                 <p>
-                  Realizamos Envíos  a Todo el País 
-                </p>
-                <p>
-                  <a
-                    className="btn btn-sm animated-button gibson-three mt-4"
-                  >
-                    Shop Now
-                  </a>
+                  <Link href="/productos">
+                    <a className="btn my-hover btn-sm animated-button gibson-three mt-4">
+                      Productos
+                    </a>
+                  </Link>
                 </p>
               </div>
               {/* <!-- /.col-lg-4 --> */}
@@ -90,18 +99,15 @@ const ProductosHome = ({ data: { allProductos } }) => {
                 </div>
 
                 <h4 className="sub-tittle-w3layouts my-lg-4 my-3">
-                  UV Protection
+                  20 años de experiencia
                 </h4>
+                <p>Contamos con profesionales experimentados</p>
                 <p>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor
-                  ligula, eget lacinia odio sem nec elit.
-                </p>
-                <p>
-                  <a
-                    className="btn btn-sm animated-button gibson-three mt-4"
-                  >
-                    Shop Now
-                  </a>
+                  <Link href="/productos">
+                    <a className="btn my-hover btn-sm animated-button gibson-three mt-4">
+                      Productos
+                    </a>
+                  </Link>
                 </p>
               </div>
               {/* <!-- /.col-lg-4 --> */}
@@ -110,14 +116,14 @@ const ProductosHome = ({ data: { allProductos } }) => {
           {/* <!-- //grids -->
 				<!-- /clients-sec --> */}
           <div className="testimonials p-lg-5 p-3 mt-4">
-            <div className="row last-section">
+            <div className="row  last-section">
               <div className="col-lg-3 footer-top-w3layouts-grid-sec">
                 <div className="mail-grid-icon text-center">
                   <i className="fas fa-gift"></i>
                 </div>
                 <div className="mail-grid-text-info">
-                  <h3>Genuine Product</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur</p>
+                  {/* <h3>Genuine Product</h3> */}
+                  {/* <p>Lorem ipsum dolor sit amet, consectetur</p> */}
                 </div>
               </div>
               <div className="col-lg-3 footer-top-w3layouts-grid-sec">
@@ -125,8 +131,8 @@ const ProductosHome = ({ data: { allProductos } }) => {
                   <i className="fas fa-shield-alt"></i>
                 </div>
                 <div className="mail-grid-text-info">
-                  <h3>Secure Products</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur</p>
+                  {/* <h3>Secure Products</h3> */}
+                  {/* <p>Lorem ipsum dolor sit amet, consectetur</p> */}
                 </div>
               </div>
               <div className="col-lg-3 footer-top-w3layouts-grid-sec">
@@ -134,8 +140,8 @@ const ProductosHome = ({ data: { allProductos } }) => {
                   <i className="fas fa-dollar-sign"></i>
                 </div>
                 <div className="mail-grid-text-info">
-                  <h3>Cash on Delivery</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur</p>
+                  {/* <h3>Cash on Delivery</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur</p> */}
                 </div>
               </div>
               <div className="col-lg-3 footer-top-w3layouts-grid-sec">
@@ -143,19 +149,15 @@ const ProductosHome = ({ data: { allProductos } }) => {
                   <i className="fas fa-truck"></i>
                 </div>
                 <div className="mail-grid-text-info">
-                  <h3>Easy Delivery</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur</p>
+                  {/* <h3>Easy Delivery</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur</p> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <style jsx>
-        {`
-         
-        `}
-      </style>
+      <style jsx>{``}</style>
       {/* .efecto-zoom:hover .imgg {
             transform: scale(1.3);
             transform: scale(1.3);

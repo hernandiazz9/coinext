@@ -43,21 +43,20 @@ query  {
   }  
 `;
 // query para obtener todos los paths
-
 export const getStaticPaths = async () => {
   const res = await request({
     query: SINGLE_PRODUCT_QUERY_PATHS,
   });
   const paths = await res.allProductos.map((producto) => {
     return {
-      params: { id: producto.slug },
+      params: { id: producto.slug.trim() },
     };
   });
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 };
 //query producto con x paths antes obtenido
 export const getStaticProps = async (context) => {
-  const slug = await context.params.id;
+  const slug = await context.params.id.trim();
   const data = await request({
     query: SINGLE_PRODUCT_QUERY,
     variables: { slug },
@@ -76,45 +75,19 @@ const Producto = ({ data }) => {
   } = allProductos[0];
 
   const renderCustomThumbs = () => {
-    return [
-      <picture key="01">
-        <source
-          data-srcset={imagen && imagen.responsiveImage.src}
-          type="image/jpg"
-        />
+    return imagen.map((img) => (
+      <picture key={img.responsiveImage.src}>
+        <source data-srcset={img.responsiveImage.src} type="image/jpg" />
         <img
-          key="01"
-          src={imagen && imagen.responsiveImage.src}
+          key={img.responsiveImage.src}
+          src={img.responsiveImage.src}
           alt="First Thumbnail"
           height="70"
         />
-      </picture>,
-      <picture key="02">
-        <source
-          data-srcset={imagen && imagen.responsiveImage.src}
-          type="image/jpg"
-        />
-        <img
-          key="02"
-          src={imagen && imagen.responsiveImage.src}
-          alt="Second Thumbnail"
-          height="70"
-        />
-      </picture>,
-      <picture key="03">
-        <source
-          data-srcset={imagen && imagen.responsiveImage.src}
-          type="image/jpg"
-        />
-        <img
-          key="03"
-          src={imagen && imagen.responsiveImage.src}
-          alt="Third Thumbnail"
-          height="70"
-        />
-      </picture>,
-    ];
+      </picture>
+    ));
   };
+  console.log(queEs);
 
   return (
     <section className="banner-bottom-wthreelayouts  py-lg-5 py-3">
@@ -129,17 +102,14 @@ const Producto = ({ data }) => {
                       infiniteLoop={true}
                       renderThumbs={renderCustomThumbs}
                     >
-                      <div className="thumb-image">
-                        {/* <img src={imagen.responsiveImage.src} alt="a" /> */}
-
-                        <Image lazyLoad={true} data={imagen.responsiveImage} />
-                      </div>
-                      <div className="thumb-image">
-                        <Image lazyLoad={true} data={imagen.responsiveImage} />
-                      </div>
-                      <div className="thumb-image">
-                        <Image lazyLoad={true} data={imagen.responsiveImage} />
-                      </div>
+                      {imagen.map((img) => (
+                        <div
+                          key={img.responsiveImage.src}
+                          className="thumb-image"
+                        >
+                          <Image lazyLoad={true} data={img.responsiveImage} />
+                        </div>
+                      ))}
                     </Carousel>
                   </div>
                   <div className="clearfix"></div>
