@@ -272,7 +272,8 @@ li.number-phone {
 ul.cart-inner-info li {
   display: inline-block;
   list-style: none;
-  margin-left: 2em;
+  /* margin-left: 2em; */
+  margin-left: 0;
 }
 
 .top-info ul li {
@@ -502,8 +503,8 @@ a.animated-button.gibson-three:hover:after {
   opacity: 1;
   color: #ff4e00;
 }
-.my-hover:hover{
-  background-color:#ff4e00 ;
+.my-hover:hover {
+  background-color: #ff4e00;
 }
 /* Show it is fixed to the top */
 
@@ -1166,6 +1167,7 @@ a.popup-with-zoom-anim {
   -moz-border-radius: 4px;
 }
 
+
 .agilegrid5 .sign.text-center {
   margin-top: 60px;
 }
@@ -1731,6 +1733,10 @@ ul.links li a:hover {
 }
 
 /*-- //to-top --*/
+.img-logo {
+  width: 200px;
+  cursor: pointer;
+}
 
 /*-- responsive media queries --*/
 
@@ -1925,7 +1931,7 @@ ul.links li a:hover {
     padding: 0 1em;
   }
   ul.cart-inner-info li {
-    margin-left: 1em;
+    margin-left: -1em;
   }
   .carousel-caption span {
     font-size: 0.3em;
@@ -1969,7 +1975,6 @@ ul.links li a:hover {
     -webkit-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    moz-background-size: cover;
     min-height: 133px;
   }
   ul.short {
@@ -2437,9 +2442,16 @@ ul.links li a:hover {
     height: 60%;
   }
 }
+@media (max-width: 768px) {
+  .img-logo {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 150px;
+  }
+}
 
 /*-- //responsive media queries --*/
-.sticky{
+.sticky {
   position: sticky;
   top: 0;
   background-color: white;

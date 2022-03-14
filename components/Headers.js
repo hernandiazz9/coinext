@@ -5,7 +5,6 @@ import { useState } from "react";
 const Headers = ({ data }) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  // console.log(router.pathname, "router");
 
   return (
     <>
@@ -23,12 +22,12 @@ const Headers = ({ data }) => {
             </ul>
           </div>
           <div className="col-md-6 logo-w3layouts text-center">
-            <h1 className="logo-w3layouts">
+            <h1 className="logo-w3  layouts">
               <span className="navbar-brand">
                 <Link href="/">
                   <img
+                    className="img-logo"
                     src={"/images/coiMetal.png"}
-                    style={{ width: "200px", cursor: "pointer" }}
                     alt="logo"
                   />
                 </Link>
@@ -37,7 +36,7 @@ const Headers = ({ data }) => {
           </div>
           <div className="col-md-3 top-info-cart text-right mt-lg-4">
             <ul className="cart-inner-info">
-              <li className="galssescart galssescart2 cart cart box_1">
+              <li className="galssescart galssescart2  cart box_1">
                 <button className="top_googles_cart">
                   <Link href="/productos">
                     <i className="fas fa-cart-arrow-down"></i>
