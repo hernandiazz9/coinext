@@ -2,7 +2,7 @@
 
 _Aplicación web de catalogó de productos  hecha con Next js, GraphQL y DatoCMS_
 
-[DEMO](https://coinext.vercel.app/)
+[DEMO](https://cirugiaoseainstrumental.vercel.app/)
 
 
 ## Comenzando 🚀
